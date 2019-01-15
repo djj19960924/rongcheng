@@ -1,15 +1,16 @@
+var app = getApp();
 Page({
   
   data: {
-    imgUrls: [
-      'https://paoba.oss-cn-beijing.aliyuncs.com/20181030130826rondom6079.jpg',
-      'https://paoba.oss-cn-beijing.aliyuncs.com/20181030132043rondom7217.jpg',
-      'https://paoba.oss-cn-beijing.aliyuncs.com/20181126133229rondom7965.jpg', 
-    ],
+    id: null,
+    imgUrl: getApp().globalData.ali,
+    sb_allInfo:null,
+    equipmentDetail: null
   },
   
   onLoad: function (options) {
-  
+    this.setData({ id: options.id })
+    getEquipmentDetailById.call(this, options.id);
   },
   
   onShareAppMessage: function () {
@@ -40,3 +41,54 @@ Page({
     })
   },
 })
+
+//获取小区详情
+function getEquipmentDetailById(id) {
+  var that = this; console
+  wx.request({
+    url: getApp().globalData.url + "wx/getVillageId_",
+    data: {
+      village_id: id
+    },
+    success: function (res) {
+
+      var resdata = res.data.data;
+      console.log("resdata:",resdata);
+      //小区信息
+      var img = resdata.img_urls;
+      var imgUrls = img.split(',');
+      that.setData({
+        imgUrls: imgUrls
+      })
+      var equipmentDetail = {
+        name: resdata.name,
+        position: resdata.aname + resdata.sname + resdata.cname + resdata.name,
+        longitude: resdata.longitude != null ? resdata.longitude : "",
+        latitude: resdata.latitude != null ? resdata.latitude : ""
+      }
+      that.setData({
+        equipmentDetail: equipmentDetail
+      })
+      //设备信息
+      var list = res.data.list;
+      wx.request({
+        url: getApp().globalData.url + "wx/equipmentBase",
+        data: {
+          village_id: id
+        },
+        success: function (res) {
+          var resdata = res.data.data;
+          console.log("设备: ",resdata);
+
+          that.setData({
+            sb_allInfo: resdata
+          })
+
+        },
+        fail() {
+          wx.hideLoading();
+        }
+      })
+    }
+  })
+}

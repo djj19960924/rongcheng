@@ -10,14 +10,14 @@
 <!-- list -->
 <scroll-view wx:if="{{true}}" style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="">
   <view class='listContainer'>
-    <view class='listItemp' wx:for="{{dataList}}" bindtap='goDetail' data-item = '{{item}}' wx:key="index">
+    <view class='listItemp' wx:for="{{villageList}}" bindtap='goDetail' data-item = '{{item}}' wx:key="index">
       <view class='listItem'>
         <view data-name='{{item.name}}' data-longitude='120.2600326538086' data-latitude='31.552650451660156' catchtap='daohang' class='juli c_theme'>导航<i-icon i-class='enterIcon' type="enter" /></view>
         <h_card_simple
-          imgUrl = "{{item.img}}"
+          imgUrl = "{{imgUrl+item.img_urls}}"
           lineA = "{{item.name}}"
-          lineB = "驾车路线距离{{item.km}}公里"
-          lineC = "预估: {{item.time}}分钟"
+          lineB = "驾车路线距离{{item.distance}}公里"
+          lineC = "预估: {{item.duration}}分钟"
           rightPadding = "30"
         ></h_card_simple>
       </view>
@@ -35,7 +35,6 @@
             range="{{objectMultiArray}}"
               range-key="{{'name'}}">
               <view class="picker">
-                    <image class="icon-left" src="../../images/equipment/weizhi.png"></image>
                     <text style='margin-right:15px;font-size:16px'>选择区域</text>
                     {{objectMultiArray[0][multiIndex[0]].name}} 
                     {{objectMultiArray[1][multiIndex[1]].name}} 
