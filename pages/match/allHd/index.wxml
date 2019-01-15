@@ -1,0 +1,23 @@
+<!-- header -->
+<h_header class='box_top' title='活动'></h_header>
+
+<!-- 缺省 -->
+<h_nodata wx:if="{{!competition_list.length}}" tips = '暂无活动'></h_nodata>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<scroll-view wx:if="{{competition_list.length}}" scroll-y = "true" style="height:{{scrollheight}}px" bindscrolltolower="loadMore">
+  <view wx:for="{{ competition_list }}" catchtap='toDetail' class='card' id='{{item.competitionId}}'>
+    <h_card_simple 
+      imgUrl="{{ali + item.competitionImg}}"
+      lineA="{{item.competitionName}}" 
+      lineB="活动时间:{{ item.startTime }} - {{ item.endTime }}"
+      line_tabs="{{item.line_tabs}}"
+    ></h_card_simple>
+  </view>
+   <!-- loading -->
+    <view class='listLoading'>
+      <i-spin wx:if="{{loading}}"></i-spin>
+    </view> 
+</scroll-view>

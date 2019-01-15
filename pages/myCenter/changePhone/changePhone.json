@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "h_header": "../../../component/h_header/h_header",
+    "h_nodata": "../../../component/h_nodata/h_nodata"
+  },
+  "navigationBarTextStyle": "black"
+}

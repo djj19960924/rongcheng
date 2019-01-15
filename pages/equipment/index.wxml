@@ -1,0 +1,45 @@
+<!-- header -->
+<h_header class='box_top' title='设施点列表'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<!-- nodata -->
+<h_nodata wx:if="{{ false }}" tips = '暂无消息 ~'></h_nodata>
+
+<!-- list -->
+<scroll-view wx:if="{{true}}" style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="">
+  <view class='listContainer'>
+    <view class='listItemp' wx:for="{{dataList}}" bindtap='goDetail' data-item = '{{item}}' wx:key="index">
+      <view class='listItem'>
+        <view data-name='{{item.name}}' data-longitude='120.2600326538086' data-latitude='31.552650451660156' catchtap='daohang' class='juli c_theme'>导航<i-icon i-class='enterIcon' type="enter" /></view>
+        <h_card_simple
+          imgUrl = "{{item.img}}"
+          lineA = "{{item.name}}"
+          lineB = "驾车路线距离{{item.km}}公里"
+          lineC = "预估: {{item.time}}分钟"
+          rightPadding = "30"
+        ></h_card_simple>
+      </view>
+    </view>
+    <i-load-more wx:if="{{loading}}" />
+  </view>
+</scroll-view>
+
+<view class='baoxiu' bindtap='goRepair'>点我报修</view>
+
+<!-- 地区三级联动 -->
+<view class='pickerContainer'>
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange"
+            bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" 
+            range="{{objectMultiArray}}"
+              range-key="{{'name'}}">
+              <view class="picker">
+                    <image class="icon-left" src="../../images/equipment/weizhi.png"></image>
+                    <text style='margin-right:15px;font-size:16px'>选择区域</text>
+                    {{objectMultiArray[0][multiIndex[0]].name}} 
+                    {{objectMultiArray[1][multiIndex[1]].name}} 
+                    {{objectMultiArray[2][multiIndex[2]].name}}
+                </view>
+          </picker>
+    </view>

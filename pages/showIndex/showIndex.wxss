@@ -1,0 +1,193 @@
+page{
+  background: #fff;
+}
+view{
+  color:#1c2438;
+}
+.banner{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.bannerImg{
+  width: 100%;
+  vertical-align: middle;
+}
+.hu{
+  height:185px;
+  width:170%;
+  background:#fff;
+  border-radius:50%;
+  position:absolute;
+  bottom:-162px;
+  left:-35%;
+}
+.btnContainer{
+  /* border-bottom: 12rpx solid #E5E5E5 */
+}
+.indexbtncontainer{
+  background: #fff;
+  text-align: center;
+}
+.indexbtn{
+  width:100rpx;
+  height: 100rpx;
+}
+.indexbtntext{
+  color: #1c2438;
+  font-size: 24rpx;
+  padding-bottom: 10px;
+}
+.toutiao{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  background: #fff;
+  border-top: 12rpx solid #E5E5E5;
+}
+.toutiaoLeft{
+  width: 64rpx!important;
+  height: 64rpx!important;
+}
+.toutiaoText{
+  flex-grow: 1;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  line-height: 32rpx;
+  width: calc(100% - 234rpx);
+  padding-right: 50rpx;
+}
+.toutiaoText1{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.toutiaoRight{
+  width: 120rpx!important;
+  height: 64rpx!important;
+  border-radius: 3px;
+  overflow: hidden
+}
+
+/* 最新赛事列表 */
+.gameContainer{
+  background: #fff;
+}
+.title{
+  padding: 20rpx;
+  padding-bottom: 0;
+  font-size: 28rpx;
+}
+.more{
+  font-size: 24rpx;
+  float: right;
+}
+.gameItemContainer{
+  width: 100%;
+  padding: 24rpx 0 24rpx 24rpx;
+  border-bottom: 1rpx solid #E9EAEC;
+  display: flex;
+  flex-direction: row;
+}
+.gameLeft{
+  width: 180rpx;
+  height: 140rpx;
+  overflow: hidden;
+}
+.gameLeftImg{
+  width: 100%;
+}
+.gameCenter{
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  position: relative;
+  width: calc(100% - 160rpx);
+  padding-right: 150rpx;
+}
+.gameCenter .c_sub,.gameCenter .c_title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.centerTitle{
+  font-size: 30rpx;
+}
+.startDays{
+  position: absolute;
+  bottom: 0rpx;
+  right: 0rpx;
+  background: #ccc;
+  font-size: 20rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 50px 0 0 50px;
+  color:#767676;
+}
+.badge{
+  color: #fff;
+  font-size: 20rpx;
+  padding: 1rpx 8rpx;
+  border-radius: 3px;
+  margin-right: 12rpx;
+  position: relative;
+  top: -2px;
+}
+
+/* adv */
+.adv{
+  width: 100%;
+}
+.advImg{
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* index header */
+.header{
+  width:100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000
+}
+.headerImg{
+  width: 100%;
+  vertical-align: middle;
+}
+.header_o{
+  width:100%;
+  position: relative;
+}
+.headerImg_o{
+  width: 100%;
+  vertical-align: middle;
+}
+.headerCover{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  display:flex;
+  justify-content:space-around;
+}
+
+
+/* swiper */
+.swiper1p{
+  height: 30vh;
+}
+.swiper1{
+  width: 100%;
+  height: 100%;
+}
+.swiper2p{
+  height: 9vh;
+}
+.swiper2{
+  width: 100%;
+  height: 100%;
+}

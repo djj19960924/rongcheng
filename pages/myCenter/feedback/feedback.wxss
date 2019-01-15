@@ -1,0 +1,94 @@
+page{
+  background: #E5E5E5;
+}
+.pickerp{
+  position: absolute;
+  top: 0;
+  right: 35px;
+  height: 48px;
+}
+.picker{
+  height: 48px;
+  line-height: 48px;
+  font-size: 28rpx;
+}
+.item{
+  background: #fff;
+}
+.title{
+  line-height:24px;
+  font-size:14px;
+  color: #000;
+  padding: 12px 15px;
+}
+.textarea{
+  padding: 0 15px;
+  font-size: 14px;
+  color: #000;
+  height: 20vh;
+  max-height: 160px;
+}
+
+/* upload start */
+.picture-number {
+  float: right;
+  margin-right: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 98rpx;
+  height: 98rpx;
+}
+
+.weui-uploader__input-box {
+  float: left;
+  position: relative;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  width: 121rpx;
+  height: 121rpx;
+}
+
+.weui-uploader__img {
+  display: block;
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.picture-container {
+  margin-bottom: 150rpx;
+  padding: 20rpx 30rpx 10rpx 30rpx;
+  margin: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.weui-uploader__file {
+  float: left;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+}
+/* upload end */
+.inputP{
+  position:relative;
+  padding:12px 15px;
+  display:flex;
+  background:#fff;
+  align-items:center;
+  line-height:1.4;
+  font-size:14px;
+  overflow:hidden;
+  color:#495060;
+}
+.wantzixun{
+  border-radius: 50px;
+  color: #D3E5F3;
+  font-size: 30rpx;
+  text-align: center;
+  width: 90%;
+  margin: 16px auto;
+  padding: 18rpx 0;
+  background: -webkit-linear-gradient(left, #0856A7 , #009CDE); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #0856A7, #009CDE); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #0856A7, #009CDE); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #0856A7 , #009CDE); /* 标准的语法（必须放在最后） */
+}

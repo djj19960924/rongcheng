@@ -1,0 +1,55 @@
+<!-- header -->
+<h_header class='box_top' title='新闻资讯'></h_header>
+
+<!-- nodata -->
+<h_nodata wx:if="{{!arr.length}}" tips = '暂无资讯 ~'></h_nodata>
+
+<!-- content -->
+<scroll-view wx:if="{{arr.length}}" style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="more">
+  <view wx:for="{{arr}}" bindtap='goDetail' data-item='{{item}}'>
+    <!-- 第一种排版 -->
+    <view wx:if="{{ item.imgCount <= 2 }}" class='cardContainer card'>
+      <view class='right'>
+        <view class='rightMain'>
+          <text wx:if="{{item.hot_status == 1}}" class='hot'>热</text>
+          <text wx:if="{{item.hot_status == 2}}" class='jian'>荐</text>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='rightSub'>
+          <text style='margin-right:16px'>{{item.type_name}}</text> 
+          <text>{{item.create_time}}</text>
+        </view>
+      </view>
+      <view style='width:100px;height:80px' class='left'>
+
+        <image mode='widthFix' class='leftImg' src='{{aliImageAddr}}{{item.imgList[0]}}'></image>
+
+
+      </view>
+    </view>
+
+    <!-- 第二种排版 -->
+    <view wx:else class='p2_container card'>
+      <view class='p2_top'>
+        <text wx:if="{{item.hot_status == 1}}" class='hot'>热</text>
+        <text wx:if="{{item.hot_status == 2}}" class='jian'>荐</text>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='p2_center'>
+        <view class='pa_center_imgp'>
+          <image mode='widthFix' class='pa_center_img' src='{{aliImageAddr}}{{item.imgList[0]}}'></image>
+        </view>
+        <view class='pa_center_imgp'>
+          <image mode='widthFix' class='pa_center_img' src='{{aliImageAddr}}{{item.imgList[1]}}'></image>
+        </view>
+        <view class='pa_center_imgp'>
+          <image mode='widthFix' class='pa_center_img' src='{{aliImageAddr}}{{item.imgList[2]}}'></image>
+        </view>
+      </view>
+      <view class='rightSub'>
+        <text style='margin-right:16px'>{{item.type_name}}</text> 
+        <text>{{item.create_time}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

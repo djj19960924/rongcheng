@@ -1,0 +1,66 @@
+/* filter */
+.filterContainer{
+  display: flex;
+  font-size: 13px;
+  flex-direction: row;
+  justify-content: space-around;
+  background: #fff;
+  width: 100%;
+  padding: 5px 0 12px 0;
+  z-index: 100,
+}
+.filterSubp{
+  background: #fff;
+  position: absolute;
+  width: 200px;
+}
+.filterSub1{
+  color: #80848F;
+  padding:10px 0;
+
+}
+.filterSub2{
+  color: #80848F;
+  padding:0 0 10px 0;
+
+}
+/* list */
+.listContainer{
+  width: 100%;
+  padding: 0 16px;
+}
+.listItem{
+  width: 100%;
+  padding: 15px 0;
+  border-bottom:1px solid #E1E1E1;
+  position: relative;
+  z-index: -100;
+}
+.listItemp:first-child .listItem{
+  padding-top: 40px;
+}
+.listItemp:last-child .listItem{
+  border: 0;
+}
+.juli{
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  font-size: 12px;
+  z-index: -100;
+}
+/* nodata */
+.changguan_nodatap{
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+}
+.changguan_nodata{
+  width: 120px;
+  height: 120px;
+}
+.changguan_nodata_text{
+  display:block;
+  font-size:12px;
+  margin-top:-15px;
+}

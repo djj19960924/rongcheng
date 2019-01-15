@@ -1,0 +1,15 @@
+<!-- header -->
+<h_header class='box_top' title='科学建议'></h_header>
+
+<view class='container'>
+  <view class='top c_title'>{{scienceAdvice}}</view>
+  <image mode='widthFix' class='banner' src='/images/sport/kxjy.png'></image>
+  <view class='content'>
+    <view class='contentc c_sub'>1、在保证蛋白质供给的基础上适当增加优质蛋白的供应，如禽畜肉、鱼、奶、豆类等；碳水化合物应占全日总能量的55%-65%，主食不宜过精过细。适当摄入脂肪，但要限制摄入动物脂肪，植物脂肪也不应太多，脂肪总量以不超过全日总能量的25%为宜。胆固醇的摄入量不超过300mg。</view>
+    <view class='contentc c_sub'>2、适量多摄入富含维生素C的食物，如橘子、卷心菜、土豆、红薯以及绿色、黄色蔬菜和富含维生素B2的食物，如蛋奶类、鱼虾类、绿叶蔬菜等，以提高运动能力，延缓运动疲劳的发生和增强肌肉收缩力。</view>
+    <view class='contentc c_sub'>3、适量多摄入一些含蛋氨酸丰富的食物，如牛奶、奶酪、牛、羊肉等，促进肝内脂肪的代谢。</view>
+    <view class='contentc c_sub'>4、适量多摄入一些瘦肉、鱼类、绿叶菜等含铁丰富的食物，防止发生缺铁性贫血。</view>
+    <view class='contentc c_sub'>5、注意水的补充，尽量不要补充纯净水和高浓度的果汁，最好补充口感好的运动饮料；不要等到口渴时再补充，要采取少量多次的办法在运动前、中、后补充。</view>
+    <view class='contentc c_sub'>6、控制油脂每天25g左右，减少动物油，限制饱和脂肪酸和胆固醇的摄入，盐最好平均每天在6g以下。</view>
+  </view>
+</view>

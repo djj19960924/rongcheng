@@ -1,0 +1,14 @@
+<map
+  id="map"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="16"
+  bindcontroltap="controltap"
+  bindmarkertap="markertap"
+  bindregionchange="regionchange"
+  show-location
+  style="width: 100%; height: 100vh;"
+  enable-overlooking="{{true}}"
+  enable-rotate="{{true}}"
+  markers="{{markers}}"
+></map>

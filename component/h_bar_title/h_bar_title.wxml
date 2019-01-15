@@ -1,0 +1,4 @@
+<view style='padding-left:{{paddingL}}' class='barTitleContainer'>
+  <view style='background:{{barColor}}' class='bar'></view>
+  <view style='color:{{color}}' class='title'>{{title}}</view>
+</view>

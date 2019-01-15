@@ -1,0 +1,67 @@
+<!-- header -->
+<h_header back='{{false}}' class='box_top' title='消息'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<!-- nodata -->
+<h_nodata wx:if="{{ messages.length === 0 }}" tips = '暂无消息 ~'></h_nodata>
+
+<!-- list -->
+<scroll-view wx:if="{{true}}" style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="">
+
+    <view bindtap='chatDetail' wx:for="{{messages}}" class='cardContainer' wx:key="index">
+      <view class='badge' wx:if="{{ item.notReadCount }}">{{item.notReadCount}}</view>
+      <view class='left'>
+        <image mode='widthFix' class='leftImg' src='/images/hlp.png'></image>
+      </view>
+      <view class='right'>
+        <view class='rightMain'>
+          <text>{{item.specialName}}</text>
+          <text class='time c_sub'>{{item.lastSendTime}}</text>
+        </view>
+        <view class='rightSub'>
+          <text>{{item.lastMessage}}</text> 
+        </view>
+      </view>
+    </view>
+
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <scroll-view scroll-y='true' style='height:500px' >
+
+<view wx:for='{{messages}}' class='messagek'>
+<view  id='{{item.specialId}}' data-specialHeadImage='{{item.specialHeadImage}}' bindtap='chatDetail'>
+
+{{item.specialHeadImage}}
+{{item.specialName}}
+{{item.lastSendTime}}
+{{item.lastMessage}}
+<view wx:if='{{item.notReadCount != 0}}'>
+{{item.notReadCount}}
+</view>
+
+</view>
+
+</view>
+
+</scroll-view> -->

@@ -1,0 +1,40 @@
+.banben{
+  /* position: fixed; */
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+  color: #3873F1;
+  font-size: 14px
+}
+.banben_img{
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  margin-right: 5px;
+}
+.code{
+  width: 100%;
+  margin-top: 20px;
+  text-align: center
+}
+.logo{
+  width: 180px;
+}
+.text{
+  color: #666;
+  font-size: 13px;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 8px 0;
+}
+.zhichi{
+  position: fixed;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 12px
+}

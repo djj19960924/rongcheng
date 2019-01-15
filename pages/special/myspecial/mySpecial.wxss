@@ -1,0 +1,65 @@
+view{
+  color:#1c2438;
+}
+.specialContainer{
+  background: #fff;
+  padding: 16rpx;
+  width: 100%;
+  border-top: 10rpx solid #E5E5E5
+}
+.specialLine1{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+}
+.specialHead{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16rpx;
+}
+.specialHeadImg{
+  width: 100%;
+}
+.specialInfo{
+  width: calc(100% - 112rpx);
+  font-size: 24rpx;
+}
+.specialName{
+  font-size: 32rpx;
+  padding-right: 20rpx;
+}
+.specialzixun{
+ color:#fff;
+  background:#17A409;
+  border-radius:50px;
+  padding:6rpx 20rpx;
+  position:absolute;
+  right:0;
+  top:18rpx;
+}
+.specialLine2{
+  width: 100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.specialLine3{
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.specialNum{
+  color: #F80505;
+  font-size: 28rpx;
+}
+.specialDetail{
+  font-size: 24rpx;
+  float: right;
+  color: #FC893A
+}

@@ -1,0 +1,38 @@
+<!-- header -->
+<h_header class='box_top' title='{{options.name}}'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<!-- filter -->
+<view style='top:{{platform == "ios" || platform == "devtools" ? "56" : "62"}}pt;position:fixed;' class='filterContainer'>
+  <view style='color:{{item.isChoose?"#2D8CF0":""}};position:relative' wx:for="{{filter}}" catchtap='{{item.method}}' class='c_sub'>{{item.name}}<i-icon type="unfold" />
+    <view wx:if="{{item.isOpen}}" class='filterSubp'>
+      <view wx:for="{{item.sub}}" data-subItem='{{subItem}}' catchtap='{{subItem.method}}' wx:for-item="subItem" class='filterSub{{subItem.type}}'>{{subItem.name}}</view>
+      </view>
+    </view>
+</view>
+
+<!-- list -->
+<view class='listContainer'>
+  <view class='listItemp' wx:for="{{venueList}}" bindtap='venueDetail' data-item = '{{item}}'>
+    <view class='listItem'>
+      <view class='juli c_sub'>1.86 km</view>
+      <h_card_simple
+        imgUrl = "{{ali + item.gym_img}}"
+        lineA = "{{item.gym_name}}"
+        lineB = "{{item.address}}"
+        lineC = "人均 : {{item.price}}"
+        rightPadding = "30"
+      ></h_card_simple>
+    </view>
+  </view>
+  <i-load-more wx:if="{{loading}}" />
+</view>
+
+<!-- nodata -->
+<view wx:if="{{venueList.length == 0}}" class='changguan_nodatap'>
+  <image class='changguan_nodata' src='/images/nodata.png'></image>
+  <text class='changguan_nodata_text c_sub'>暂无数据 ~</text>
+</view>
+

@@ -1,0 +1,25 @@
+<!-- header -->
+<h_header wx:if="{{!loading}}" back="{{false}}" class='box_top' title='智慧荣成'></h_header>
+
+<view wx:if="{{!loading}}" class='container'>
+  <image mode='widthFix' class='logo' src='/images/tice/logo.png'></image>
+  <text class='line'></text>
+  <view>
+    <view class='title c_title'>登陆后开发者将获得以下公开权限</view>
+    <view style='margin: 10px 0;' class='info c_sub'>· 公开信息（昵称、头像等）</view>
+    <view class='info c_sub'>· 登陆后可享受更多功能</view>
+  </view>
+  <button hover-class='okhover' class='ok' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">确认登陆</button>
+</view>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<view wx:if="{{loading}}" class='container1'>
+  <!-- <image mode='widthFix' style='width:300rpx' class='loading' src='/images/my/logo.png'></image> -->
+  <image mode='widthFix' class='loading' src='https://paoba.oss-cn-beijing.aliyuncs.com/load.gif'></image>
+  <!-- <view class='loadingContainer'>
+    <view class='ball1'></view>
+    <view class='ball2'></view>
+  </view> -->
+</view>

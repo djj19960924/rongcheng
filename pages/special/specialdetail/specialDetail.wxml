@@ -1,0 +1,52 @@
+<!-- header -->
+<image class='detailHeaderimg' mode='widthFix' src='/images/special/detailHeader.png'></image>
+<view wx:if="{{platform == 'ios'}}" style='top:24pt' class='whitePageTitle'>专家详情</view>
+<view wx:if="{{platform == 'android'}}" style='top:30pt' class='whitePageTitle'>专家详情</view>
+<view wx:if="{{platform == 'devtools'}}" style='top:24pt' class='whitePageTitle'>专家详情</view> 
+
+<view class='container'>
+  <view wx:if="{{platform == 'ios'}}" catchtap='back' style='top:24pt' class='back'><i-icon color='#fff' size='24' type="return" /></view>
+  <view wx:if="{{platform == 'android'}}" catchtap='back' style='top:30pt' class='back'><i-icon color='#fff' size='24' type="return" /></view>
+  <view wx:if="{{platform == 'devtools'}}" catchtap='back' style='top:24pt' class='back'><i-icon color='#fff' size='24' type="return" /></view>
+  <!-- ding -->
+  <view wx:if="{{platform == 'android'}}" style='height:62pt' class='ding'></view>
+  <view wx:if="{{platform == 'ios'}}" style='height:56pt' class='ding'></view>
+  <view wx:if="{{platform == 'devtools'}}" style='height:56pt' class='ding'></view>
+
+  <!-- content -->
+  <view class='content'>
+    <view class='man'>
+      <view class='manLeft'>
+        <image mode='widthFix' class='manImg' src='{{ali + headimg}}'></image>
+      </view>
+      <view class='manRight'>
+        <view class='c_title maninfo'>
+          <text class='manname'>{{name}}</text>
+          <text style='margin-left:20rpx'>{{professional_titles}}</text>
+          <!-- <text style='margin-left:20rpx'>副研究员</text> -->
+        </view>
+        <view class='c_sub'>{{workunit}}</view>
+        <view class='c_sub'>服务人数 :<text class='fuwunum'>{{service_count}}</text></view>
+      </view>
+    </view>
+
+    <view class='skill'>
+      <view class='skillTitle'>
+        <image class='skillIcon' src='/images/special/shanchang.png'></image>
+        <text class='c_title skillText'>擅长</text>
+      </view>
+      <view class='c_sub skillContent'>{{good_info}}</view>
+    </view>
+
+    <view class='skill'>
+      <view class='skillTitle'>
+        <image class='skillIcon' src='/images/special/jianjie.png'></image>
+        <text class='c_title skillText'>简介</text>
+      </view>
+      <view class='c_sub skillContent'>{{introduction}}</view>
+    </view>
+
+    <!-- <view class='wantzixun' id="{{id}}" bindtap="specialGuide">我要咨询</view> -->
+
+  </view>
+</view>

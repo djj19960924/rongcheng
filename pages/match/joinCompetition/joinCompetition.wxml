@@ -1,0 +1,84 @@
+<!-- header -->
+<h_header class='box_top' title='报名'></h_header>
+
+<image style='top:{{40}}pt' mode='widthFix' class='join_top' src='https://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG251.png'></image>
+<image mode='widthFix' class='join_bottom' src='https://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG256.png'></image>
+
+<view class='title c_theme'>报名参赛</view>
+
+<view class='inputContainer'>
+  <i-panel title="填写信息">
+      <i-input bind:change='inputName' title="姓名" placeholder="名字 (必填)" />
+      <view bindtap='chooseSex' class='sexContainer'>
+        <text style='width:65px;display:inline-block'>性别</text>
+        <text>{{sexValue == '0' ? '男' : '女'}}</text>
+        <i-icon i-class='enter' type="enter" />
+      </view>
+      <i-input bind:change='inputPhone' type="number" title="联系方式" placeholder="请输入手机号 (必填)" maxlength="11" />
+      <i-input bind:change='inputCardId' title="身份证号" placeholder="请输入身份证" maxlength="18"  />
+      <i-input bind:change='inputWorkSpace' title="工作单位"  placeholder="请输入工作单位(50字以内)"  maxlength="50"/>
+  </i-panel>
+</view>
+
+<i-button bind:click="requestJoin" type="primary" loading="{{loading}}" shape="circle">提交</i-button>
+
+<!-- modal -->
+<i-modal title='性别' visible="{{ visible }}" actions="{{ sexArr }}" action-mode="{{ vertical }}" bind:click="handleOk">
+</i-modal>
+
+
+
+
+
+
+
+
+
+
+<!-- <view>
+
+
+  <view>
+    <text>报名参赛</text>
+  </view>
+
+  <view>
+    <view>
+      <view>
+        <text>姓名</text>
+        <input bindinput='inputName' placeholder=''></input>
+      </view>
+
+      <view>
+        <text>性别</text>
+        <picker bindchange="bindSexChange" value="{{sex_index}}" range="{{sex_array}}">
+          <view class="picker"> {{sex_array[sex_index]}} </view>
+        </picker>
+      </view>
+
+      <view>
+        <text>联系方式</text>
+        <input bindinput='inputPhone'></input>
+      </view>
+
+      <view>
+        <text>身份证号</text>
+        <input bindinput='inputCardId'></input>
+      </view>
+
+      <view>
+        <text>工作单位</text>
+        <input bindinput='inputWorkSpace'></input>
+      </view>
+
+    </view>
+
+    <button bindtap='requestJoin'>提交</button>
+
+  </view>
+
+
+
+
+
+</view> -->

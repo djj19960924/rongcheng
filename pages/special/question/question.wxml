@@ -1,0 +1,42 @@
+<h_header top='{{keyHeight}}' class='box_top' title='专家咨询' pulltext=''></h_header>
+<i-notice-bar class='notice box_top' icon="systemprompt" loop color='#FC8C49'>
+    请您耐心等待，专家看到您的信息后会立刻给您回复！
+</i-notice-bar>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<scroll-view scroll-top="{{scrolltop}}" class='scroll' style='height:{{scrollheight}}px' scroll-y='true' bindscroll='requestHistoryMessage'>
+  <view wx:if='{{!hideloading}}' class='listLoading'>
+      <i-spin></i-spin>
+  </view>
+  <view id='a{{item.id}}' class='chatItem' wx:for="{{msglist}}">
+    <!-- 别人发的 -->
+    <view wx:if="{{item.sender == 2}}">
+      <view class='left'>
+        <view class='leftImgView'>
+          <image mode='widthFix' class='leftImg' src='/images/hlp.png'></image>
+        </view>
+        <view class='leftTextP'>
+          <text class='leftText'>{{item.msg}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 我发的 -->
+    <view wx:if="{{item.sender == 1}}">
+      <view class='right'>
+        <view class='rightImgView'>
+          <image mode='widthFix' class='rightImg' src='/images/hlp.png'></image>
+        </view>
+        <view class='rightTextP'>
+          <text class='rightText'>{{item.msg}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class='inputp box_top'>
+  <input value="{{sendValue}}" bindinput='getSendContent' cursor-spacing ='16' bindblur='resetKeyHeight' bindfocus='getKeyHeight' placeholder-class='inputPlaceholder' class="input" type="text" placeholder="描述越详细，分析越准确噢~"/>
+  <view catchtap='send' class='send'>发送</view>
+</view>

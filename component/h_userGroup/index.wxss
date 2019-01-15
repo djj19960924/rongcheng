@@ -1,0 +1,14 @@
+.yeye{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.baba{
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: #ddd;
+}
+.sun{
+  width: 100%;
+}

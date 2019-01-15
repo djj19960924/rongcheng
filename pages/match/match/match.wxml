@@ -1,0 +1,176 @@
+<!-- header -->
+<h_header class='box_top' title='赛事社团'></h_header>
+
+<!-- search -->
+<view class='search box_top'>
+  <view style='position:relative;width: calc(100%)'>
+    <input bindinput='inputSearch' class='searchInput' placeholder='请输入搜索内容' placeholder-class='searchPlaceholder'></input>
+    <view bindtap='tapSearch' class='searchBtn'><i-icon size='20' color='#8F8F8F' type="search" /></view>
+  </view>
+  <view bindtap='toMyMatch' class='searchRight'>我的社团</view>
+</view>
+
+<!-- loading --> 
+<i-toast id="toast" />
+
+<scroll-view style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="">
+  <!-- 协会\俱乐部\团体会 -->
+  <view class='banner'>
+    <view class='bannerImgp'>
+      <image mode='widthFix' class='bannerImg' src='https://paoba.oss-cn-beijing.aliyuncs.com/1.png'></image>
+      <view bindtap='toXiehui' class='modal'>协会</view>
+    </view>
+    <view class='bannerImgp'>
+      <image mode='widthFix' class='bannerImg' src='https://paoba.oss-cn-beijing.aliyuncs.com/2.png'></image>
+      <view bindtap='toClub' class='modal'>俱乐部</view>
+    </view>
+    <view class='bannerImgp'>
+      <image mode='widthFix' class='bannerImg' src='https://paoba.oss-cn-beijing.aliyuncs.com/3.png'></image>
+      <view bindtap='toTuantihui' class='modal'>团体会</view>
+    </view>
+  </view>
+
+  <!-- 本周\下周 -->
+  <view class='week'>
+    <view class='weekC'>
+      <view class='thisWeek c_title'>本周赛事 
+        <text class='weekNum'>{{now_week_num}}</text> 场
+      </view>
+      <view class='nextWeek c_title'>下周赛事 
+        <text class='weekNum'>{{next_week_num}}</text> 场
+      </view>
+    </view>
+  </view>
+
+  <!-- 赛事列表 -->
+  <view wx:if="{{competitionType == 1}}" class='list_container'>
+    <view class='list_title'>
+      <text bindtap='getsaishi' class='list_title_tab {{competitionType == 1 ? "active" : ""}}'>赛事</text>
+      <text bindtap='gethuodong' class='list_title_tab {{competitionType == 2 ? "active" : ""}}'>活动</text>
+      <text class='more' catchtap='allMatch'>{{competitionType == 1 ? "更多赛事" : "更多活动"}}</text>
+    </view>
+    <view  catchtap='toDetail' wx:for-item="item"  id='{{item.competitionId}}' data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}" class='listItem'>
+      <view class='itemTop'>
+        <image mode='widthFix' src='{{ img_url + item.competitionImg }}' class='itemImg'></image>
+      </view>
+      <view class='itemCenter'>{{ item.competitionName }}</view>
+      <view class='itemBottom'>
+        <view class='itemBottomRight c_sub'>距离比赛 : 8天</view>
+        <!-- <view class='itemBottomRight c_sub'>距离比赛 : {{ item.timeDiff }}</view> -->
+        <view class='c_sub'>比赛时间 : {{ item.startTime }} - {{ item.endTime }}</view>
+      </view>
+      <view class='itemFooter'>
+        <text style="background:{{item.status < 3 ? '#31C948' : item.status == 3 ? '#0192D6' : item.status == 4 ? '#FF393E' : '#ADADAD'}}" class='itemFooterLeft1'>{{item.status < 3 ? '比赛尚未开始' : item.status == 3 ? '报名中' : item.status == 4 ? '报名结束' : '比赛已结束'}}</text>
+        <text class='itemFooterLeft2'>费用:免费</text>
+        <view class='itemFooterRight'>325523人报名</view>
+      </view>
+    </view>
+  </view> 
+
+  <!-- 活动列表 -->
+  <view wx:if="{{competitionType == 2}}" class='list_container'>
+    <view class='list_title'>
+      <text bindtap='getsaishi' class='list_title_tab {{competitionType == 1 ? "active" : ""}}'>赛事</text>
+      <text bindtap='gethuodong' class='list_title_tab {{competitionType == 2 ? "active" : ""}}'>活动</text>
+      <text class='more' catchtap='allMatch'>{{competitionType == 1 ? "更多赛事" : "更多活动"}}</text>
+    </view>
+    
+    <view  catchtap='toDetail' wx:for-item="item"  id='{{item.competitionId}}' data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}" class='listItem'>
+      <h_card_simple 
+        imgUrl = "{{ img_url + item.competitionImg }}"
+        lineA = "{{ item.competitionName }}"
+        lineB = "比赛时间 : {{ item.startTime }} - {{ item.endTime }}"
+        line_tabs="{{item.line_tabs}}"
+        imgW = "100"
+        imgH = "80"
+        zIndex = "100"
+      ></h_card_simple>
+    </view>
+  </view> 
+  
+
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view style='display:none'> -->
+
+  <!-- 搜索 -->
+  <!-- <view>
+    <input placeholder='请输入搜索内容' bindinput='inputSearch'></input>
+    <button bindtap='tapSearch'>搜索</button>
+    <text>我的社团</text>
+  </view> -->
+
+  <!-- 类型 -->
+  <!-- <view>
+    <view>
+      <button bindtap='toXiehui'>协会</button>
+    </view>
+    <view>
+      <button bindtap='toClub'>俱乐部</button>
+    </view>
+    <view>
+      <button bindtap='toTuantihui'>团体会</button>
+    </view>
+  </view> -->
+
+
+  <!-- 本周赛事 下周 -->
+  <!-- <view>
+    <view>
+      <text>本周赛事 {{ now_week_num }} 场</text>
+    </view>
+    <view>
+      <text>下周赛事 {{ next_week_num }} 场</text>
+    </view>
+  </view> -->
+
+
+  <!-- 列表 -->
+  <!-- <view>
+    <view>
+      <view>
+        <button>赛事</button>
+        <button>活动</button>
+      </view>
+      <button catchtap='allMatch'>更多精彩</button>
+    </view>
+
+    <scroll-view scroll-y='true'>
+      <view catchtap='toDetail' wx:for-item="item"  id='{{item.competitionId}}' data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}">
+
+        <view>
+          <image src='{{ item.competitionImg}} ' />
+          <text>{{ item.competitionName }}</text>
+          <view>
+            <text>比赛时间 {{ item.startTime }} - {{ item.endTime }} </text>
+            <text> 距离比赛 {{ item.timeDiff }}</text>
+          </view>
+
+          <view>
+            <text>费用. 免费</text>
+            <text>人报名</text>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+
+  </view> -->
+
+<!-- </view> -->

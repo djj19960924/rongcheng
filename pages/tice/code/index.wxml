@@ -1,0 +1,22 @@
+<!-- header -->
+<h_header class='box_top' title='体质测试'></h_header>
+
+<view class='container'>
+  <view class='header'>
+    <view class='header_img'><open-data type="userAvatarUrl"></open-data></view>
+    <view class='header_name'><open-data type="userNickName"></open-data></view>
+  </view>
+  <view class='code'>
+    <image class='codeImg' src='{{ codeImgUrl }}'></image>
+  </view>
+  <view class='text1 c_sub'>
+    该二维码用户荣成智能体测设备
+  </view>
+  <view class='text2 c_sub'>
+    请将此二维码放置体测设备的扫描处
+  </view>
+</view>
+
+<view class='logop'>
+  <image mode='widthFix' class='logo' src='/images/my/logo.png'></image>
+</view>

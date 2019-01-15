@@ -1,0 +1,14 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<!-- header -->
+<h_header class='box_top' title='新闻详情'></h_header>
+
+<view class='page'>
+  <view class='title c_title'>{{item.title}}</view>
+  <view class='sub c_sub'>
+    <text style='padding-right:28rpx'>{{item.type_name}}</text>
+    <text>{{item.create_time}}</text>
+  </view>
+  <view class='content c_content'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!-- header -->
+<h_header class='box_top' title='添加运动记录'></h_header>
+
+<scroll-view style='height:{{scrollheight}}px' scroll-y='true' bindscrolltolower='requestSportType'>
+
+  <view class='item' wx:for='{{sportTypes}}' data-sportIcon='{{item.sportIcon}}' data-sportName='{{item.sportName}}' data-sportDuration='{{item.sportDuration}}'
+  data-sportTypeId='{{item.id}}' data-sportConsumeCal='{{item.sportConsumeCal}}' data-sportRatio='{{item.sportRatio}}' bindtap='chooseDetailRecord'>
+    <!-- {{item.sportIcon}} -->
+    <view class='imgp'>
+      <image mode='widthFix' class='img' src='{{"https://paoba.oss-cn-beijing.aliyuncs.com/paoba/" + item.sportIcon + ".png"}}'></image>
+    </view> 
+    <view class='right'>
+      <view style='font-size:30rpx' class='c_title'>{{item.sportName}}</view>
+      <view style='font-size:24rpx' class='c_sub'>{{item.sportConsumeCal}} 千卡/{{item.sportDuration}} 分钟</view>
+    </view>
+  </view>  
+
+</scroll-view> 

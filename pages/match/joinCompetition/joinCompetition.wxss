@@ -1,0 +1,31 @@
+.title{
+  color: #0856A7;
+  font-size: 44rpx;
+  text-align: center;
+  font-weight: 900;
+  padding: 30px 0 20px 0;
+}
+.sexContainer{
+  color:#495060;
+  padding-right:10px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+}
+.enter{
+  float: right;
+  margin-top: 17px;
+}
+.join_top{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -100;
+}
+.join_bottom{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -100;
+}

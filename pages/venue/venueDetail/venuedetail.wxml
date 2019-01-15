@@ -1,0 +1,31 @@
+<!-- header -->
+<h_header class='box_top' title='场馆详情'></h_header>
+
+<!-- top -->
+<image class='topimg' mode='widthFix' src='https://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG243.jpeg'></image>
+
+<view class='item'>
+  <view class='title'>{{venue.gym_name}}
+    <image bindtap='call' class='callIcon' src='/images/venue/tel.png'></image>
+  </view>
+  <view bindtap='go' style='margin-top:10px;' class='content enter'>{{venue.address}}
+    <i-icon wx:if="{{venue.connect_user_tel}}" i-class='enterIcon' size='20' type="enter" />
+  </view>
+</view>
+
+<view class='item'>
+  <view class='title'>场馆服务</view>
+  <view class='blueTips'>营业时间 : 8:00 ~ 20:00</view>
+  <!-- <view class='blueTips'>营业时间 : {{venue.business_date}} {{venue.business_time}}</view> -->
+  <view class='tabsContainer'>
+    <view class='tabsItem' wx:for="{{serviceList}}">
+    <image class='tabsItemImg' src='{{item.icon}}'></image>
+    {{item.name}}
+    </view>
+  </view>
+</view>
+
+<view class='item'>
+  <view class='title'>场馆介绍</view>
+  <view class='content'>{{venue.introduce}}</view>
+</view>

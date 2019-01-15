@@ -1,0 +1,93 @@
+/* list */
+.listContainer{
+  width: 100%;
+  padding: 0 16px;
+}
+.listItem{
+  width: 100%;
+  padding: 15px 0;
+  border-bottom:1px solid #E1E1E1;
+  position: relative;
+  /* z-index: -100; */
+}
+.listItemp:first-child .listItem{
+  padding-top: 10px;
+}
+.listItemp:last-child .listItem{
+  border: 0;
+}
+.juli{
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  font-size: 12px;
+  /* z-index: -100; */
+}
+.enterIcon{
+  position: relative;
+  top: -1px;
+}
+.baoxiu{
+  position: fixed;
+  top: 20vh;
+  right: 0;
+  padding: 5px 8px 5px 16px;
+  border-radius: 50px 0 0 50px;
+  background: #0192D6;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.pickerContainer{
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+}
+.areaPicker{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 98rpx;
+  width: 100%;
+  background:#fff;
+  border-top: 1px solid #ddd;
+  color: #666;
+  padding-top: 3px;
+  z-index: 2000;
+  padding-right: 80rpx
+}
+.icon-left {
+  float: left;
+  height: 48rpx;
+  width: 48rpx;
+  margin-left: 30rpx;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+.areatext{
+  position:relative;
+  top:8px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.arrows-icon {
+  height: 40rpx;
+  width: 40rpx;
+  float: right;
+  margin-right: 20rpx;
+  position:relative;
+  top:-15px; 
+}
+.picker{
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #F5F6F6;
+  font-size:14px;
+  color:#666;
+}

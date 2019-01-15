@@ -1,0 +1,112 @@
+<!-- header -->
+<h_header class='box_top' title='个人中心'></h_header>
+
+<i-message wx:if="{{platform == 'ios'}}" top='56' id="message" />
+<i-message wx:if="{{platform == 'android'}}" top='62' id="message" />
+<i-message wx:if="{{platform == 'devtools'}}" top='56' id="message" />
+
+<view>
+  <view class='group'>
+    <view class='headImgp'>
+      <view class='headTitle'>头像</view>
+      <view class='headImg'><open-data type="userAvatarUrl"></open-data></view>
+    </view>
+    <i-cell-group>
+      <i-cell data-num="1" bind:click='willChange' title="用户名" value="{{ userInfo.nickName }}" is-link></i-cell>
+      <i-cell data-num="2" bind:click='willChange' title="性别" value="{{ userInfo.sex == 1 ? '男' : '女' }}" is-link></i-cell>
+
+      <i-cell title="出生年月" value="1998-12-12" is-link></i-cell>
+
+      <i-cell data-num="3" bind:click='willChange' title="身份证号" value="{{ userInfo.identityId }}" is-link></i-cell>
+      <i-cell data-num="6" bind:click='willChange' title="手机号" value="{{ userInfo.phone }}" is-link></i-cell>
+    </i-cell-group>
+  </view>
+  <view class='group'>
+    <i-cell-group>
+      <i-cell data-num="4" bind:click='willChange' title="身高" value="{{ userInfo.height }} cm" is-link></i-cell>
+      <i-cell data-num="5" bind:click='willChange' title="体重" value="{{ userInfo.weight }} kg" is-link></i-cell>
+    </i-cell-group>
+  </view>
+</view>
+
+<i-modal title='用户名' visible="{{ visible1 }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <input focus="{{isFocus1}}" bindinput='watchValue'></input>
+</i-modal>
+<i-modal title='性别' visible="{{ visible2 }}" actions="{{ sexArr }}" action-mode="{{ vertical }}" bind:click="handleOk">
+</i-modal>
+<i-modal title='身份证' visible="{{ visible3 }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <input focus="{{isFocus3}}" bindinput='watchValue'></input>
+</i-modal>
+<i-modal title='身高' visible="{{ visible4 }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <input focus="{{isFocus4}}" bindinput='watchValue' type='number'></input>
+</i-modal>
+<i-modal title='体重' visible="{{ visible5 }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <input focus="{{isFocus5}}" bindinput='watchValue' type='number'></input>
+</i-modal>
+<i-modal title='手机号' visible="{{ visible6 }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <input focus="{{isFocus6}}" bindinput='watchValue' type='number'></input>
+</i-modal>
+
+
+
+
+
+
+
+<!-- <view>
+
+  <view>
+    <text>头像</text>
+    <image src='' />
+  </view>
+
+  <view>
+    <text>用户名</text>
+    <input value='{{ userInfo.nickName }}'></input>
+  </view>
+
+  <view>
+    <text>性别</text>
+    <picker bindchange="bindPickerChange" value="{{sex_index}}" range="{{sex_array}}">
+      <view class="picker"> 当前选择：{{sex_array[sex_index]}} </view>
+    </picker>
+  </view>
+
+  <view>
+    <text>出身年月</text>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker"> 当前选择: {{date}} </view>
+    </picker>
+  </view>
+
+  <view>
+    <text>身份证号</text>
+    <input value='{{ userInfo.cardId }}'></input>
+  </view>
+
+  <view>
+    <text>身高</text>
+    <picker
+    mode="multiSelector"
+    bindchange="bindMultiPickerChange"
+    bindcolumnchange="bindMultiPickerColumnChange"
+    value="{{multiIndex}}"
+    range="{{multiArray}}"
+  >
+    <view class="picker">
+       {{multiArray[0][multiIndex[0]]}}{{multiArray[1][multiIndex[1]]}}{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
+  </view>
+
+  <view>
+    <text>体重</text>
+    <input value='{{userInfo.weight}}'></input>
+  </view>
+
+
+  <view>
+  <button bindtap='saveUserInfo'>保存</button>
+  </view>
+
+</view> -->

@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "i-button": "../../../dist/button/index",
+    "i-toast": "../../../dist/toast/index",
+    "i-spin": "../../../dist/spin/index",
+    "h_header": "../../../component/h_header/h_header",
+    "h_bar_title": "../../../component/h_bar_title/h_bar_title",
+    "h_nodata": "../../../component/h_nodata/h_nodata",
+    "h_card_simple": "../../../component/h_card_simple/h_card_simple"
+  },
+  "navigationBarTextStyle": "black"
+}

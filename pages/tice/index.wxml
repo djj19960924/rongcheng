@@ -1,0 +1,140 @@
+<!-- header -->
+<h_header class='box_top' title='体质测试'></h_header>
+
+<!-- top -->
+<view class='top'>
+  <image class='banner' mode='aspectFill' src='https://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG250.png'></image>
+  <view class='topContent'>
+    <view class='top_userp'>
+      <view class='top_userHead'>
+        <view>
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+      </view>
+      <view class='top_userInfo'>
+        <view>
+          <text bindlongtap='test' class='top_userInfo_name'>{{ userInfo.nickName }}</text>
+          <!-- <image class='seximg' src='/images/tice/sex1.png'></image> -->
+          <image class='seximg' src='/images/tice/sex2.png'></image>
+          <text class='top_userInfo_birth'>{{ userInfo.birthday }}</text>
+        </view>
+        <view style='font-size:13px;'>体测标准项目共 {{mustTestCount}} 项</view>
+      </view>
+    </view>
+    <view class='btnp'>
+      <view bindtap='gocode' class='btnItem'>
+        <image class='btnImg' src='/images/tice/code.png'></image>
+        <view class='btnItemRight'>
+          <view class='btnItemRightTop c_title'>体测二维码</view>
+          <view class='btnItemRightBottom c_sub'>个人信息轻松验证</view>
+        </view>
+      </view>
+      <view bindtap='sao' class='btnItem'>
+        <image class='btnImg' src='/images/tice/sao.png'></image>
+        <view class='btnItemRight'>
+          <view class='btnItemRightTop c_title'>扫一扫</view>
+          <view class='btnItemRightBottom c_sub'>体测更加方便快捷</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- center -->
+<view class='center'>
+  <view class='centerTitle'>国民体质监测</view>
+  <view class='centerp'>
+    <image class='centerpimg' mode='widthFix' src='https://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG247.png'></image>
+  </view>
+</view>
+
+<!--  -->
+<view class='center1'>
+  <image mode='aspectFill' class='center1_img' src='/images/tice/tipsbg.png'></image>
+  <block wx:if='{{canMakeReport}}'>
+    <view class='center1_1'>恭喜您已体测完所有标准项目</view>
+    <view class='center1_2'>说明: 所有必测项测完后，才可以查看报告噢！</view>
+    <view bindtap='goTiceData' data-canMakeReport='{{canMakeReport}}' class='center1_btn'>查看报告</view>
+  </block>
+  <block wx:else>
+    <view class='center1_1'>您已体测{{yetTestCount}}项 ，再测{{mustTestCount - yetTestCount}}项生成报告!</view>
+    <view class='center1_2'>说明: 所有必测项测完后，才可以查看报告噢！</view>
+    <!-- 未测完时按钮不能点 -->
+    <view bindtap='goTiceData' data-canMakeReport='{{canMakeReport}}' class='center1_btn_o'>查看报告</view>
+  </block>
+  <!--  -->
+  <image class='tipsicon' src='/images/tice/tipsicon.png'></image>
+</view>
+
+<!-- list -->
+<view class='listTitle c_title'>标准体测项目 (
+  <text style='color:#21A9EA'>{{yetTestCount}}</text>/{{mustTestCount}})</view>
+<view style='border-bottom:5px solid #E5E5E5' class='listContainer'>
+  <view bindtap='goDataDetail' data-score="{{item.score}}" data-danwei='{{item.danWei}}' data-projectNo='{{item.tcType}}' wx:for="{{mustTest}}" class='listItem'>
+    <view class='listItem1'>
+      <block wx:if='{{item.score}}'>
+        <image class='listItem1Img' src='/images/tice/tc_{{item.iconName}}.png'></image>
+      </block>
+      <block wx:else>
+        <image class='listItem1Img' src='/images/tice/tc_{{item.iconName}}.png'></image>
+      </block>
+
+      <text class='c_title listItem1Text'>{{item.name}}</text>
+    </view>
+    <view class='listItem2'>
+      <block wx:if='{{item.score}}'>
+        <view class='listItem2_1 c_title'>{{item.score}} {{item.danWei}}</view>
+        <view class='listItem2_2 c_sub'>{{item.date}}</view>
+      </block>
+      <block wx:else>
+        <view class='listItem2_2 c_sub'>--</view>
+      </block>
+
+    </view>
+    <view class='listItem3'></view>
+    <view class='listItem4'>
+
+      <image wx:if="{{item.score}}" class='ok' src='/images/tice/ok1.png'></image>
+      <image wx:else class='ok' src='/images/tice/nook.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='listTitle c_title'>您还可以测
+  <text class='zqo'>(测试项目越多，分析越准确哦)</text> </view>
+<view style='padding-bottom:36rpx' class='listContainer'>
+  <view bindtap='goDataDetail' data-score="{{item.score}}" data-danwei='{{item.danWei}}' data-projectNo='{{item.tcType}}' wx:for="{{notMustTest}}" class='listItem'>
+    <view class='listItem1'>
+
+
+      <block wx:if='{{item.score}}'>
+        <image class='listItem1Img' src='/images/tice/tc_{{item.iconName}}.png'></image>
+      </block>
+      <block wx:else>
+        <image class='listItem1Img' src='/images/tice/tc_{{item.iconName}}.png'></image>
+      </block>
+      <text class='c_title listItem1Text'>{{item.name}}</text>
+
+
+    </view>
+
+    <view class='listItem2'>
+      <block wx:if='{{item.score}}'>
+        <view class='listItem2_1 c_title'>{{item.score}} {{item.danWei}}</view>
+        <view class='listItem2_2 c_sub'>{{item.date}}</view>
+      </block>
+      <block wx:else>
+        <view class='listItem2_2 c_sub'>--</view>
+      </block>
+
+    </view>
+
+    <view class='listItem3'></view>
+    <view class='listItem4'>
+
+      <image wx:if="{{item.score}}" class='ok' src='/images/tice/ok1.png'></image>
+      <image wx:else class='ok' src='/images/tice/nook.png'></image>
+    </view>
+  </view>
+
+</view>

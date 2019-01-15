@@ -1,0 +1,94 @@
+<!-- header -->
+<h_header class='box_top' title='意见反馈'></h_header>
+
+<view style='position:relative;margin-bottom:12rpx'>
+  <i-panel class="cell-panel-demo">
+      <i-cell is-link title="意见类型"></i-cell>
+  </i-panel>
+  <picker class='pickerp' bindchange="bindPickerChange" value="{{type_index}}" range="{{type_array}}">
+    <view class="picker c_sub">{{type_array[type_index]}} </view>
+  </picker>
+</view>
+
+<view class='item'>
+  <view class='title'>意见说明</view>
+  <view class='content'>
+    <textarea placeholder='点击输入您要反应的信息' class='textarea'></textarea>
+  </view>
+</view>
+
+<view class='item'>
+  <view class='title'>图片描述 ({{files.length}}/10)</view>
+  <view class="weui-uploader__bd picture-container">
+    <view class="weui-uploader__files" id="uploaderFiles">
+      <block wx:for="{{files}}" wx:key="*this">
+        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+          <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+        </view>
+      </block>
+    </view>
+    <view class="weui-uploader__input-box" wx:if="{{files.length < 10}}">
+      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+    </view>
+  </view>
+</view>
+
+<view class='item'>
+  <view class='title'>联系方式</view>
+  <view class='content'>
+    <i-panel title="">
+      <view class='inputP'>
+        <i-icon size='22' color='#209CED' type="mine_fill" />
+        <input style='padding-left:6px' placeholder="请输入姓名" cursor-spacing ='20'/>
+      </view>
+    </i-panel>
+    <i-panel title="">
+      <view class='inputP'>
+          <i-icon size='22' color='#209CED' type="mobilephone_fill" />
+          <input style='padding-left:6px' type="number" placeholder="请输入手机号码" cursor-spacing ='20'/>
+      </view>
+    </i-panel>
+  </view>
+</view>
+
+<view class='wantzixun'>提交</view>
+
+
+
+
+
+
+<!-- <view>
+  <view>
+    <text>意见类型</text>
+    <picker bindchange="bindPickerChange" value="{{type_index}}" range="{{type_array}}">
+      <view class="picker">{{type_array[type_index]}} </view>
+    </picker>
+  </view>
+
+  <view>
+    <text>意见说明</text>
+    <input bindinput='inputContent' placeholder='请输入你的反馈意见'></input>
+  </view> -->
+
+  <!-- <view>
+    <text>图片描述</text>
+
+    <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
+
+    <view>
+      <block wx:for="{{images}}" wx:key="index">
+        <view>
+          <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindlongtap='removeImage'></image>
+         </view>
+      </block>
+    </view>
+
+    <button type="primary" bindtap="submitForm">提交</button>
+
+
+  </view> -->
+
+
+
+<!-- </view> -->

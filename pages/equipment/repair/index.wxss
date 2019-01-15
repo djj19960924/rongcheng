@@ -1,0 +1,166 @@
+page{
+  background: #E5E5E5
+}
+.weizhip{
+  background: #fff;
+  padding: 10px 16px;
+  margin: 6px 0;
+  width: 100%
+}
+.weizhit{
+  font-size: 16px;
+}
+.weizhi{
+  width: 100%;
+  font-size: 13px;
+  margin-top: 8px;
+  height: 26px;
+  line-height: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.weizhiicon{
+  position: relative;
+  top: -2px;
+}
+.remarkp{
+  padding: 10px 16px;
+  background: #fff;
+}
+.remarkt{
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+textarea{
+  font-size: 14px;
+  width: 100%;
+  height: 18vh;
+}
+.yuyinp{
+  padding: 10px 16px;
+  background: #fff;
+  margin: 6px 0;
+}
+.yuyint{
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.yuyin{
+  color: #fff;
+  font-size: 11px;
+  padding: 0 14px;
+  background: #0192D6;
+  border-radius: 50px;
+  display: inline-block;
+  line-height: 26px;
+  height: 26px
+}
+.yuyinConteiner{
+  display: flex;
+  line-height: 26px;
+}
+.play{
+  font-size: 12px;
+  color: #0192D6;
+  margin-left: 20px; 
+}
+.imgp{
+  padding: 10px 16px;
+  background: #fff;
+  margin: 6px 0;
+}
+.imgt{
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.submitp{
+  padding: 16px;
+  padding-bottom: 26px
+}
+.submit{
+  border-radius: 50px;
+  color: #D3E5F3;
+  font-size: 30rpx;
+  text-align: center;
+  width: 100%;
+  padding: 18rpx 0;
+  background: -webkit-linear-gradient(left, #0856A7 , #009CDE); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #0856A7, #009CDE); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #0856A7, #009CDE); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #0856A7 , #009CDE); /* 标准的语法（必须放在最后） */
+}
+.tel{
+  display: flex;
+}
+.telicon{
+  position: relative;
+  top: -2px;
+}
+.telinput{
+  font-size: 16px;
+  padding-left: 5px;
+}
+.telplaceholder{
+  font-size: 14px;
+}
+
+
+/* upload */
+.picture-number {
+  float: right;
+  margin-right: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 98rpx;
+  height: 98rpx;
+}
+
+.weui-uploader__input-box {
+  float: left;
+  position: relative;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  width: 121rpx;
+  height: 121rpx;
+}
+
+.weui-uploader__img {
+  display: block;
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.picture-container {
+  margin-bottom: 150rpx;
+  padding: 20rpx 0 10rpx 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.weui-uploader__file {
+  float: left;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.record-container {
+  position: fixed;
+  height: 240rpx;
+  width: 240rpx;
+  border-radius: 20rpx;
+  top: 300rpx;
+  left: 255rpx;
+  background: #26a5ff;
+  z-index: 100;
+}
+
+.record-container image {
+  position: absolute;
+  width: 74rpx;
+  height: 150rpx;
+  top: 45rpx;
+  left: 83rpx;
+}
+/* upload */

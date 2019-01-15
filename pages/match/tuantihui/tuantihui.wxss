@@ -1,0 +1,9 @@
+.card{
+  width: 94%;
+  padding: 24rpx 0;
+  margin: 0 2% 0 4%;
+  border-bottom: 1px solid #E1E1E1;
+}
+.card:last-child{
+  border-bottom:0;
+}

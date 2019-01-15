@@ -1,0 +1,156 @@
+<!-- header -->
+<h_header class='box_top' title='场馆'></h_header>
+
+<!-- swiper -->
+<swiper
+  autoplay = "true"
+  interval = "3000"
+  duration = "500"
+  circular = "true"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image mode='aspectFill' src="{{item}}" class="swiper"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- type -->
+<view class='typeContainer'>
+  <view wx:for="{{typeList}}" wx:for-item="line" class='typeLine'>
+    <view wx:for='{{line}}' class='typeIconp' data-name='{{item.text}}' id='{{item.id}}' bindtap='venuebytype'> 
+      <image mode='aspectFill' class='typeIcon' src='{{item.icon}}'></image>
+      <view class='typeText c_title'>{{item.text}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- filter -->
+<view style='top:{{platform == "ios" || platform == "devtools" ? "56" : "62"}}pt;position:{{fixed ? "fixed" : ""}};' class='filterContainer'>
+  <view style='color:{{item.isChoose?"#2D8CF0":""}};position:relative' wx:for="{{filter}}" catchtap='{{item.method}}' class='c_sub'>{{item.name}}<i-icon type="unfold" />
+    <view wx:if="{{item.isOpen}}" class='filterSubp'>
+      <view wx:for="{{item.sub}}" data-subItem='{{subItem}}' catchtap='{{subItem.method}}' wx:for-item="subItem" class='filterSub{{subItem.type}}'>{{subItem.name}}</view>
+      </view>
+    </view>
+</view>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<!-- list -->
+<view class='listContainer'>
+  <view class='listItemp' wx:for="{{venueList}}" bindtap='venueDetail' data-item = '{{item}}'>
+    <view class='listItem'>
+      <view class='juli c_sub'>1.86 km</view>
+      <h_card_simple
+        imgUrl = "{{ ali + item.gym_img}}"
+        lineA = "{{item.gym_name}}"
+        lineB = "{{item.address}}"
+        lineC = "人均 : {{item.price}}"
+        rightPadding = "30"
+      ></h_card_simple>
+    </view>
+  </view> 
+  <i-load-more wx:if="{{loading}}" />
+</view>
+
+<!-- nodata -->
+<view wx:if="{{venueList.length == 0}}" class='changguan_nodatap'>
+  <image class='changguan_nodata' src='/images/nodata.png'></image>
+  <text class='changguan_nodata_text c_sub'>暂无数据 ~</text>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class='container'>
+
+
+<image src='/images/venue.png' style='height:130px'></image>
+
+<view class='venue_type'>
+  
+  <button id="1" bindtap='venuebytype' class="typebutton" plain='true'>
+    游泳
+  </button>
+   <button id="2" bindtap='venuebytype' class="typebutton" plain='true'>
+    篮球
+  </button>
+   <button  id="3" bindtap='venuebytype' class="typebutton" plain='true'>
+    乒乓球
+  </button>
+   <button id="4" bindtap='venuebytype' class="typebutton" plain='true'>
+    健身
+  </button>
+   <button id="5" bindtap='venuebytype' class="typebutton" plain='true'>
+    羽毛球
+  </button>
+   <button id="6" bindtap='venuebytype' class="typebutton" plain='true'>
+    足球
+  </button>
+   <button id="7" bindtap='venuebytype' class="typebutton" plain='true'>
+    瑜伽
+  </button>
+   <button id="8" bindtap='venuebytype' class="typebutton" plain='true'>
+    网球
+  </button>
+   <button id="9" bindtap='venuebytype' class="typebutton" plain='true'>
+    卡丁车
+  </button>
+   <button  id="10" bindtap='venuebytype' class="typebutton" plain='true'>
+    其他
+  </button>
+
+</view>
+
+
+
+</view>
+
+<view>
+  <button id='1' bindtap='venuebysort'>距离最近</button>
+  <button id='2' bindtap='venuebysort'>距离最远</button>
+
+  <button id='2' bindtap='venuebyhumanqi'>人气最高</button>
+  <button id='2' bindtap='priceSort' >人均价格 ⬇️</button>
+  <button id='1' bindtap='priceSort'>人均价格 ⬆️</button>
+  <button>综合排序</button>
+  
+  <button>全部分类</button>
+
+  <scroll-view scroll-y = "true" style='height:200px' bindscrolltolower="more">
+    <view wx:for="{{venueList}}" >
+      
+      <button data-gymName='{{item.gym_name}}' 
+      data-gymImage = '{{item.gym_img}}'
+      data-businessDate = '{{item.business_date}}'
+      data-businessTime = '{{item.business_time}}'
+      data-installationsName = '{{item.installations_name}}'
+      data-introduce = '{{itme.introduce}}'
+      data-address='{{item.address}}' 
+      data-item = '{{item}}'bindtap='venueDetail'>
+      {{item.gym_img}} 
+      {{item.gym_name}}
+      {{item.address}}
+      {{item.price}}
+      {{item.latitude}}
+      {{item.longitude}}
+      </button>
+      
+    </view>
+  </scroll-view>
+</view>
+
+ -->

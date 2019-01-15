@@ -1,0 +1,28 @@
+<!-- header -->
+<h_header class='box_top' title='添加饮食'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<view class='container' style='height:{{scrollheight}}px'>
+  <view class='left'>
+    <view style='color:{{item.isChoose?"#0995D7":""}}' wx:for="{{typeList}}" class='leftItem c_title' id='{{item.id}}' bindtap='queryEatType'>
+    {{item.name}}
+    </view>
+  </view>
+
+  <scroll-view style='height:100%' class='right' scroll-y='true' bindscrolltolower='requestMoreEatType'>
+    <view class='foodItem' wx:for='{{sportEatTypes}}' data-foodName='{{item.foodName}}' data-foodIcon='{{item.foodIcon}}' 
+      data-foodAddCal='{{item.foodAddCal}}' data-foodGram='{{item.foodGram}}' 
+      data-foddRatio='{{item.foodRatio}}'  data-foodId='{{item.id}}' bindtap='chooseDetailEatRecord'>
+        <view class='foodImgp'>
+          <image mode='widthFix' class='foodImg' src='{{item.foodIcon}}'></image>
+        </view>
+        <view class='foodInfo'>
+          <view class='foodName c_title'>{{item.foodName}}</view>
+          <view class='foodOther c_sub'><text style='color:#F80404'>{{item.foodAddCal}}</text> 千卡 / {{item.foodGram}} 毫升</view>
+        </view>
+    </view>
+    <i-load-more wx:if="{{loading}}" />
+  </scroll-view>
+</view>

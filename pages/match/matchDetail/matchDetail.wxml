@@ -1,0 +1,142 @@
+<!-- header -->
+<h_header class='box_top' title='社团主页'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<view class='container'>
+  <!-- bg -->
+  <image mode='widthFix' class='bg' src='https://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG255.png'></image>
+  <!-- header -->
+  <view class='header box_top'>
+    <view class='headerImgp'>
+      <image mode='widthFix' class='headerImg' src='{{ali + match_detail.eventImg}}'></image>
+    </view>
+    <view class='headerRight'>
+      <view class='headerRightTop'>{{ match_detail.eventName }}</view>
+      <view class='headerRightBottom'>{{ match_detail.matchDescription }}</view>
+    </view>
+  </view>
+  <!-- content -->
+  <scroll-view class='content' scroll-y = "true" style="height:{{scrollheight}}px" bindscrolltolower="loadMore">
+    <!-- 公告 -->
+    <view class='gonggaop'>
+      <h_bar_title paddingL="0" title='社团公告'></h_bar_title>
+      <view wx:if="{{match_detail.announcement}}" class='gonggao c_sub'>{{ match_detail.announcement }}</view>
+      <view style='text-align:center;text-indent:0' wx:else class='gonggao c_sub'>暂无公告</view>
+    </view>
+    <!-- 成员 -->
+    <view class='memberp'>
+      <h_bar_title paddingL="0" title='社团成员'></h_bar_title>
+      <view bindtap='toAllUser' wx:if="{{ match_detail.memberCount > 0 }}" class='userGroup'>
+        <h_userGroup list="{{userList}}"></h_userGroup>
+        <view class='userGroupText c_sub'><text style='padding-right:10px'>{{ match_detail.memberCount }}位成员</text><i-icon style='position:relative;top:-2px;' size='18' type="enter" /></view>
+      </view>
+      <view style='text-align:center' wx:else class='userGroupText c_sub'>暂无成员</view>
+    </view>
+    <!-- 活动 -->
+    <view class='huodongp'>
+      <h_bar_title paddingL="0" title='团活动'></h_bar_title>
+      <view wx:for-item="item" data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}" class='huodong'>
+        <h_card_simple 
+          imgUrl = "/images/rc.png"
+          lineA = "{{ item.competitionName }}"
+          lineB = "活动时间 : {{ item.startTime }} - {{ item.endTime }} "
+          line_tabs="{{item.line_tabs}}"
+        ></h_card_simple>
+      </view>
+      <view style='text-align:center;margin-top:30px;' class='userGroupText c_sub' wx:if="{{ competition_list.length == 0 }}">暂无活动</view>
+    </view>
+  </scroll-view>
+  <!-- footer -->
+  <view bindtap='joinMatch' hover-class='fixedBtn_hover' class='fixedBtn box_top'>{{ match_detail.status > 0 ? 
+  match_detial == 2 ? '已加入' : '已申请加入' :  '申请加入' }}</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view> -->
+
+  <!-- 顶部介绍 -->
+  <!-- <view>
+    <image src='{{ match_detial.eventImg }}' />
+    <text>{{ match_detail.eventName }}</text>
+    <text>简介: {{ match_detail.matchDescription }}</text>
+  </view> -->
+  <!-- 社团公告 -->
+  <!-- <view>
+    <text>社团公告</text>
+    <text>{{ match_detail.announcement }} </text>
+  </view>
+
+  <view>
+    <text>社团成员</text>
+    <text>{{ match_detail.memberCount }} 位成员</text>
+    <button bindtap='toAllUser'>></button>
+  </view>
+
+
+  <view>
+
+    <view>
+      <text>团活动</text>
+      <text>精彩瞬间</text>
+      <text>活动纪录</text>
+
+    </view>
+
+    <scroll-view scroll-y='true'>
+      <view catchtap='changeTime ' wx:for-item="item" data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}">
+
+        <view>
+          <image src='{{ item.competitionImg}} ' />
+          <text>{{ item.competitionName }}</text>
+          <view>
+            <text>比赛时间 {{ item.startTime }} - {{ item.endTime }} </text>
+            <text> 距离比赛 {{ item.timeDiff }}</text>
+          </view>
+
+          <view>
+            <text>费用. 免费</text>
+            <text>人报名</text>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+
+
+  </view>
+
+
+  <view>
+    <button bindtap='joinMatch'>加入社团</button>
+  </view>
+
+
+
+
+
+</view> -->

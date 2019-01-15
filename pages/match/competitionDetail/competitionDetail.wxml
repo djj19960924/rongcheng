@@ -1,0 +1,16 @@
+<!-- header -->
+<h_header class='box_top' title='赛事活动详情'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" /> 
+
+<!-- content -->
+<view class='content'>
+  <view class='title c_title'>{{ competition_detail.competitionName }}</view>
+  <view class='info c_sub'>比赛时间 : {{competition_detail.startTime}} - {{competition_detail.endTime}}</view>
+  <view class='info c_sub'>比赛地点 : {{competition_detail.location}}</view>
+  <view class='detail c_content'>{{competition_detail.competitionContent}}</view>
+</view>
+
+<!-- fixed btn -->
+<view bindtap='joinCompetition' class='fixedBtn'>{{ competition_detail.cost  > 0 ? competition_detail.cost != 2 ? '已报名' : '审核通过' :  '我要报名' }} </view>

@@ -1,0 +1,34 @@
+.title{
+  font-size: 16px;
+  font-weight: 900;
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.danwei{
+  font-size: 24rpx;
+  font-weight: 400;
+}
+.chartsContainer{
+  padding: 0 16px;
+  width: 100%;
+}
+.canvas{
+  width: 100%;
+  height: 200px;
+}
+.timeTitle{
+  font-size: 26rpx;
+  background: #E5E5E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #4E4E4E;
+  padding: 3px 16px;
+}
+.dateitem{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 28rpx;
+  border-bottom: 1px solid #DEDEDE;
+}

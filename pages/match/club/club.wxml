@@ -1,0 +1,61 @@
+<!-- header -->
+<h_header class='box_top' title='俱乐部'></h_header>
+
+<!-- 缺省 -->
+<h_nodata wx:if="{{match_list.length == 0}}" tips = '暂无俱乐部 ~'></h_nodata>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<scroll-view wx:if="{{match_list.length > 0}}" scroll-y = "true" style="height:{{scrollheight}}px" bindscrolltolower="loadMore">
+  <view catchtap='toDetail' wx:for-item="item" data-id="{{  item.matchEventId }}" wx:for="{{ match_list }}" wx:key="{{ matchEventId }}" class='card'>
+    <h_card_simple 
+      imgUrl = "{{ali + item.eventImg}}"
+      lineA = "{{ item.eventName }}"
+      lineB = "简介 : {{ item.matchDescription }}"
+      lineC = "成立时间 : {{ item.createTime }}"
+    ></h_card_simple>
+  </view>
+  <!-- loading -->
+  <view class='listLoading'>
+    <i-spin wx:if="{{loading}}"></i-spin>
+  </view>
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 列表 -->
+<!-- <view>
+
+  <view>
+    <view catchtap='toDetail' wx:for-item="item" data-id="{{  item.matchEventId }}" wx:for="{{ match_list }}" wx:key="{{ matchEventId }}">
+
+      <view>
+        <image src='{{ item.eventImg}}' />
+        <text>{{ item.eventName }}</text>
+        <text> 简介:  {{ item.matchDescription }}</text>
+        <text>人数: {{ item.memberCount }}</text>
+      </view>
+    </view>
+  </view>
+
+</view> -->

@@ -1,0 +1,42 @@
+<!-- header -->
+<h_header class='box_top' title='修改手机号'></h_header>
+
+<h_nodata imgW='160' imgH='160' img='http://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG237.png' tips = '建设中...'></h_nodata>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view>
+
+  <view wx:if="{{ pageStatus }}">
+    <text>{{ noPhone ? "当前没有绑定手机号" : "当前绑定手机号" }}</text>
+
+    <button bindtap='changePhone'>{{ noPhone ? "绑定手机号" : "更换手机号" }}</button>
+
+  </view>
+
+  <view wx:if="{{ !pageStatus }}">
+    <input disabled='{{ send_code }}' bindinput='inputPhone' placeholder='请输入手机号'></input>
+
+    <button bindtap='getCode'>获取验证码</button>
+    <input bindinput='inputCode' placeholder='请输入验证码'></input>
+
+    <button bindtap='changeOk'>下一步</button>
+
+  </view>
+
+</view> -->

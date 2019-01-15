@@ -1,0 +1,59 @@
+page{
+  background: #E5E5E5;
+}
+.topimg{
+  width: 100%;
+  vertical-align: middle;
+}
+.item{
+  margin-bottom: 6px;
+  padding: 10px 14px;
+  background: #fff;
+}
+.title{
+  font-size: 16px;
+  font-weight: 900;
+  color: #1c2438
+}
+.content{
+  color: #80848F;
+  font-size: 14px;
+  line-height: 25px;
+}
+.blueTips{
+  font-size: 14px;
+  color: #0E67B1;
+}
+.tabsItem{
+  font-size: 12px;
+  color: #80848F;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 16px;
+}
+.tabsItemImg{
+  vertical-align: -2px;
+  width: 14px;
+  height: 14px;
+}
+.enter{
+  margin-top: 10px;
+  padding-right: 30px;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.enterIcon{
+  position: absolute;
+  right: 0px;
+  top: 3px;
+}
+.callIcon{
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}

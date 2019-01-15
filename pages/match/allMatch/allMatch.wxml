@@ -1,0 +1,67 @@
+<!-- header -->
+<h_header class='box_top' title='赛事'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<scroll-view style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="loadMore">
+  <view class='list_container'>
+    <view  catchtap='toDetail' wx:for-item="item"  id='{{item.competitionId}}' data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}" class='listItem'>
+      <view class='itemTop'>
+        <image mode='widthFix' src='{{ ali + item.competitionImg }}' class='itemImg'></image> 
+      </view>
+      <view class='itemCenter'>{{ item.competitionName }}</view>
+      <view class='itemBottom'>
+        <view class='itemBottomRight c_sub'>距离比赛 : 8天</view>
+        <!-- <view class='itemBottomRight c_sub'>距离比赛 : {{ item.timeDiff }}</view> -->
+        <view class='c_sub'>比赛时间 : {{ item.startTime }} - {{ item.endTime }}</view>
+      </view>
+      <view class='itemFooter'>
+        <text style="background:{{item.status < 3 ? '#31C948' : item.status == 3 ? '#0192D6' : item.status == 4 ? '#FF393E' : '#ADADAD'}}" class='itemFooterLeft1'>{{item.status < 3 ? '比赛尚未开始' : item.status == 3 ? '报名中' : item.status == 4 ? '报名结束' : '比赛已结束'}}</text>
+        <text class='itemFooterLeft2'>费用:免费</text>
+        <view class='itemFooterRight'>325523人报名</view>
+      </view>
+    </view>
+  </view>
+   <!-- loading -->
+    <view class='listLoading'>
+      <i-spin wx:if="{{loading}}"></i-spin>
+    </view> 
+</scroll-view>
+
+
+
+
+
+
+
+<!-- 列表 -->
+  <!-- <view>
+    <view>
+      <view>
+       <button>报名赛事</button>
+      <button>赛事日历</button>
+      </view>
+     </view>
+
+    <scroll-view scroll-y='true'>
+      <view catchtap='toDetail'  id='{{ item.competitionId }}' wx:for-item="item" data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}">
+
+        <view>
+          <image src='{{ item.competitionImg}} ' />
+          <text>{{ item.competitionName }}</text>
+          <view>
+            <text>比赛时间 {{ item.startTime }} - {{ item.endTime }} </text>
+            <text> 距离比赛 {{ item.timeDiff }}</text>
+          </view>
+
+          <view>
+            <text>费用. 免费</text>
+            <text>人报名</text>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+
+  </view> -->

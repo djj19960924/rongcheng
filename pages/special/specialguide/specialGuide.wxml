@@ -1,0 +1,5 @@
+<scroll-view scroll-y = "true" bindscrolltolower="">
+
+
+<image src='{{}}'></image>
+</scroll-view>

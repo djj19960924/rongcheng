@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "h_header": "../../../component/h_header/h_header"
+  },
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,111 @@
+{
+  "pages": [
+   
+    "pages/login",
+    "pages/addInfo/index",
+    "pages/showIndex/showIndex",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/match/allMatch/allMatch",
+    "pages/match/match/match",
+    "pages/match/allHd/index",
+    "pages/match/matchDetail/matchDetail",
+    "pages/match/joinCompetition/joinCompetition",
+    "pages/match/allUser/allUser",
+    "pages/match/tuantihui/tuantihui",
+    "pages/match/club/club",
+    "pages/match/xiehui/xiehui",
+    "pages/match/competitionDetail/competitionDetail",
+    "pages/special/special",
+    "pages/special/specialdetail/specialDetail",
+    "pages/special/myspecial/mySpecial",
+    "pages/special/specialguide/specialGuide",
+    "pages/myCenter/myCenter/myCenter",
+    "pages/special/question/question",
+    "pages/sport/sportIndex",
+    "pages/sport/sportrecord/sportRecord",
+    "pages/sport/sporteatrecord/sportEatRecord",
+    "pages/sport/sportsettarget/sportSetTarget",
+    "pages/myCenter/myMatch/myMatch",
+    "pages/myCenter/myCompetition/myCompetition",
+    "pages/myCenter/myTc/myTc",
+    "pages/myCenter/myUserInfo/myUserInfo",
+    "pages/myCenter/myRms/myRms",
+    "pages/myCenter/myRms/rmsDetail/index",
+    "pages/myCenter/feedback/feedback",
+    "pages/myCenter/equipmentManage/equipmentManage",
+    "pages/myCenter/myMessage/myMessage",
+    "pages/myCenter/changePhone/changePhone",
+    "pages/myCenter/aboutMe/aboutMe",
+    "pages/sport/sportguidance/sportGuidance",
+    "pages/sport/sportguidance_detail/sportGuidance_Detail",
+    "pages/sport/sport_science_advice/sportScienceAdvice",
+    "pages/news/newsList/index",
+    "pages/news/newsDetail/index",
+    "pages/message/message",
+    "pages/venue/venue",
+    "pages/venue/venueDetail/venuedetail",
+    "pages/venue/allVenue/index",
+    "pages/bodytest/bodyTest",
+
+    "pages/nearby/index",
+
+    "pages/equipment/repair/index",
+    "pages/equipment/index",
+    "pages/equipment/pointDetail/index",
+    "pages/tice/index",
+    "pages/tice/itemData/index",
+    "pages/tice/report/index",
+    "pages/tice/ticeData/index",
+    "pages/tice/code/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1699D3",
+    "navigationBarTitleText": "荣成智慧健身",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#787878",
+    "selectedColor": "#0387C6",
+    "borderStyle": "white",
+    "backgroundColor": "#eee",
+    "list": [
+      {
+        "pagePath": "pages/showIndex/showIndex",
+        "iconPath": "images/index/tab1_0.png",
+        "selectedIconPath": "images/index/tab1_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/nearby/index",
+        "iconPath": "images/index/tab2_0.png",
+        "selectedIconPath": "images/index/tab2_1.png",
+        "text": "附近"
+      },
+      {
+        "pagePath": "pages/sport/sportIndex",
+        "iconPath": "images/index/tab3_0.png",
+        "selectedIconPath": "images/index/tab3_1.png",
+        "text": "跑吧"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "images/index/tab4_0.png",
+        "selectedIconPath": "images/index/tab4_1.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/myCenter/myCenter/myCenter",
+        "iconPath": "images/index/tab5_0.png",
+        "selectedIconPath": "images/index/tab5_1.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

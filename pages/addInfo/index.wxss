@@ -1,0 +1,39 @@
+.inputItem{
+  display: flex;
+  align-items: center;
+  padding:7px 15px;
+
+}
+.inputItemt{
+  display: flex;
+  align-items: center;
+  padding:7px 15px;
+  border-bottom: 1px solid #F5F6F6;
+}
+.inputTitle{
+  font-size: 28rpx;
+  color: #495060;
+  padding-right: 10px;
+}
+.inputInput{
+  flex:1;
+  line-height:1.6;
+  padding:4px 0;
+  min-height:22px;
+  height:auto;
+  font-size:28rpx;
+  color: #495060;
+}
+
+.ok{
+  border-radius: 50px;
+  color: #D3E5F3;
+  font-size: 30rpx;
+  text-align: center;
+  width: 100%;
+  padding: 2rpx 0;
+  background: -webkit-linear-gradient(left, #0856A7 , #009CDE); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #0856A7, #009CDE); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #0856A7, #009CDE); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #0856A7 , #009CDE); /* 标准的语法（必须放在最后） */
+}

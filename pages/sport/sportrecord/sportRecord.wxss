@@ -1,0 +1,24 @@
+.item{
+  width: 96%;
+  margin-left: 4%;
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ECECEC;
+}
+.item:last-child{
+  border: 0
+}
+.imgp{
+  width: 80rpx;
+  height: 80rpx;
+}
+.img{
+  width: 100%;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20rpx;
+}

@@ -1,0 +1,97 @@
+.scroll{
+  z-index: -100;
+}
+.chatItem{
+  padding: 0 24rpx;
+}
+.left{
+  margin-bottom: 16px;
+  width: 100%;
+  display: flex;
+}
+.leftImgView{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 24rpx;
+}
+.leftImg{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.leftTextP{
+  width: calc(100% - 180rpx);
+  display: flex;
+}
+.leftText{
+  font-size: 26rpx;
+  background: #C0E7FF;
+  color: #3A464D;
+  padding: 16rpx 24rpx;
+  border-radius: 5px;
+  display: inline-block;
+  margin: auto 0;
+}
+.right{
+  margin-bottom: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse
+}
+.rightImgView{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 24rpx;
+}
+.rightImg{
+  width: 100%;
+  height: 100%;
+}
+.rightTextP{
+  width: calc(100% - 180rpx);
+  display: flex;
+  flex-direction: row-reverse;
+}
+.rightText{
+  font-size: 26rpx;
+  background: #FFFADD;
+  color: #47463D;
+  padding: 16rpx 24rpx;
+  border-radius: 5px;
+  display: inline-block;
+  margin: auto 0;
+}
+/* input */
+.inputp{
+  display: flex;
+  width: 100%;
+  padding: 10rpx 10rpx 20rpx 126rpx;
+  position: relative;
+}
+.send{
+  border: 1px solid #B6B6B6;
+  border-radius: 50px;
+  padding: 0 32rpx;
+  color: #7E7E7E;
+  font-size: 28rpx;
+  background: #fff;
+  margin-left: 20rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+}
+.input{
+  border: 0;
+  background: #E5E5E5;
+  border-radius: 5px;
+  padding: 0 20rpx;
+  height: 72rpx;
+  width: calc(100% - 200rpx);
+}
+.inputPlaceholder{
+  color: #ADADAD;
+  font-size: 24rpx;
+}

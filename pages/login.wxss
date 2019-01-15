@@ -1,0 +1,70 @@
+.logo{
+  margin-top: 16vh;
+  width: 120px;
+}
+.line{
+  border-bottom: 1px solid #DEDEDE;
+  margin: 24px;
+  width: 80%;
+}
+.title{
+  font-size: 32rpx;
+}
+.info{
+  font-size: 26rpx;
+}
+.ok{
+  border: 0;
+  outline: 0;
+  width: 80%;
+  margin-top: 36px;
+  background: #04BE01;
+  color: #fff;
+  font-size: 30rpx;
+}
+.okhover{
+  background: #1CCE1A
+}
+.loading{
+  margin-top: 50px;
+  width: 100%;
+  margin: auto
+}
+.container1{
+  height: 100vh;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+/* loading gif */
+@keyframes rotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+.loadingContainer{
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+  /* animation: rotate 3s linear infinite; */
+  background: #ddd;
+}
+.ball1{
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  background: #04BE01;
+}
+.ball2{
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  background:#14359a;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

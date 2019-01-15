@@ -1,0 +1,170 @@
+.container{
+  padding: 16px 12px;
+}
+.container1{
+  padding: 0 12px;
+}
+.top1{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  background: #fff;
+  width: 100%;
+  border-bottom: 1px solid #DEDEDE;
+  padding-bottom: 12rpx;
+}
+.top1logo{
+  width: 120rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.top2{
+  width: 100%;
+  display: flex;
+}
+.top2_left{
+  width: 50%;
+  display: flex;
+  margin: 28rpx 0;
+  border-right: 1px solid #E7E7E7;
+}
+.top2_head{
+  width: 90rpx;
+  height: 90rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 32rpx;
+}
+.top2_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.top2_name{
+  font-size: 32rpx;
+}
+.top2_sex{
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 12rpx;
+}
+.top2_birth{
+  color: #D6EFFB;
+  font-size: 20rpx;
+  background: #27ADEA;
+  padding: 0 6px;
+  border-radius: 50px;
+}
+.top2_right{
+  width: 50%;
+  display: flex;
+  margin: 28rpx 0;
+}
+.gradeImg{
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 32rpx;
+  vertical-align: middle;
+  margin-left: 32rpx;
+}
+.gradeText{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 24rpx;
+}
+
+/* main */
+.title{
+  font-size: 32rpx;
+  font-weight: 900;
+  margin: 28rpx 0;
+}
+/* 综合评价 */
+.zh_img{
+  width: 100%;
+}
+.canvas {
+  width: 100%;
+  height: 300px;
+}
+
+/* 体测项目 */
+.projectp{
+  border-bottom: 1px solid #DFDFDF;
+  padding-bottom: 12px;
+  padding-top: 4px;
+}
+.projectp:first-child{
+  padding-top: 0;
+}
+.p_top{
+  display: flex;
+  justify-content: space-between;
+
+}
+.p_top_left_1{
+  font-size: 32rpx;
+  padding-right: 10rpx;
+}
+.p_top_left_2{
+  font-size: 22rpx;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 5px;
+  background: #3EAFFF;
+}
+.p_top_right_1{
+  color: #D60101;
+  font-size: 28rpx;
+}
+.p_top_right_2{
+  font-size: 22rpx;
+}
+.p_center{
+  margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.p_center_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.p_center_left_bottom{
+  width: 260rpx;
+}
+.p_center_left_top{
+  font-size: 24rpx;
+}
+.p_center_right{
+  color: #4FA8EF;
+  font-size: 28rpx;
+}
+.p_bottom{
+  font-size: 26rpx;
+}
+/* 饮食 */
+.foodp{
+  display: flex;
+  font-size: 26rpx;
+  width: 100%;
+  color: #666;
+  padding-bottom: 5vh;
+}
+.food_left{
+  width: 100rpx
+}
+.food_right{
+  width: calc(100% - 100rpx);
+  padding-left: 32rpx;
+  text-indent:2em;
+  
+}
+.showAll{
+  text-align: right;
+  font-size: 24rpx;
+  color: #ED3F14;
+  
+}

@@ -1,0 +1,88 @@
+<!-- header -->
+<h_header class='box_top' title='体测数据'></h_header>
+
+<!-- content1 -->
+<view class='c1'>
+  <view class='title c_title'>
+    <image class='titleIcon' src='/images/tice/title1.png'></image>
+    <text>身体基础数据</text>
+  </view>
+  <view style='display:flex'>
+    <view class='c_item c_title'>
+      <view class='c1_item_1'>高</view>
+      <view class='c_item_2'>身高</view>
+      <view class='c_item_3 c_sub'><text class='c_item_3_1'>{{ userInfo.height}}</text> cm</view>
+    </view>
+    <view class='c_item c_title'>
+      <view class='c2_item_1'>重</view>
+      <view class='c_item_2'>体重</view>
+      <view class='c_item_3 c_sub'><text class='c_item_3_1'>{{userInfo.weight}}</text> kg</view>
+    </view>
+  </view>
+  <view style='display:flex'>
+    <view class='c_item c_title'>
+      <view class='c3_item_1'>B</view>
+      <view class='c_item_2'>BMI</view>
+      <view class='c_item_3 c_sub'><text class='c_item_3_1'>{{bmi}}</text><text style="font-size:20rpx"> ( 标准 )</text></view>
+    </view>
+  </view>
+  <image class='bmiImg' mode='widthFix' src='/images/tice/bmi2.png'></image>
+</view>
+
+<!-- content2 -->
+<view class='c2' wx:if='{{okCount > 0}}'>
+  <view class='title c_title'>
+    <image class='titleIcon' src='/images/tice/ok.png'></image>
+    <text>{{ okCount }}项目放心指标</text>
+  </view>
+  <!--  -->
+  <view class='listItemp' wx:for="{{ticeData}}" wx:if="{{item.grade > 2}}">
+    <view bindtap='openorclose' data-name='{{item.name}}' class='listItem'>
+      <image class='listItem_1' src='/images/tice/tc_{{item.icon}}_gray.png'></image>
+      <text class='listItem_2 c_title'>{{item.name}}</text>
+      <text class='listItem_3 c_title'>{{item.score}}</text>
+      <text class='listItem_4 c_sub'> {{item.danwei}}</text>
+      <image class='listItem_5' src='/images/tice/grade{{item.grade == 3 ? 2 :3}}.png'></image>
+      <i-icon wx:if="{{item.isopen}}" color='#0192D6' i-class='listItem_6' type="packup" />
+      <i-icon wx:if="{{!item.isopen}}" i-class='listItem_6' type="unfold" />
+    </view>
+    <!-- 展开的内容 -->
+    <view class='openp' wx:if="{{item.isopen}}">
+      <view class='open1 c_title'>体测成绩: <text style='color:#0192D6'>{{item.grade}}</text>/5 分</view>
+      <view class='open2'>
+        <i-progress percent="{{item.grade * 20}}" hide-info stroke-width='4'></i-progress>
+      </view>
+      <view class='open3 c_sub'>{{item.date}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='c2' wx:if='{{riskCount > 0}}'>
+  <view class='title c_title'>
+    <image class='titleIcon' src='/images/tice/title2.png'></image>
+    <text>{{ riskCount }}项指标需特别注意</text>
+  </view>
+  <!--  -->
+  <view class='listItemp' wx:for="{{ticeData}}" wx:if="{{item.grade < 3}}">
+    <view bindtap='openorclose' data-name='{{item.name}}' class='listItem'>
+      <image class='listItem_1' src='/images/tice/tc_{{item.icon}}_gray.png'></image>
+      <text class='listItem_2 c_title'>{{item.name}}</text>
+      <text class='listItem_3 c_title'>{{item.score}}</text>
+      <text class='listItem_4 c_sub'> {{item.danwei}}</text>
+      <image class='listItem_5' src='/images/tice/grade1.png'></image>
+      <i-icon wx:if="{{item.isopen}}" color='#0192D6' i-class='listItem_6' type="packup" />
+      <i-icon wx:if="{{!item.isopen}}" i-class='listItem_6' type="unfold" />
+    </view>
+    <!-- 展开的内容 -->
+    <view class='openp' wx:if="{{item.isopen}}">
+      <view class='open1 c_title'>体测成绩: <text style='color:#0192D6'>{{item.grade}}</text>/5 分</view>
+      <view class='open2'>
+        <i-progress percent="{{item.grade * 20}}" status="wrong" hide-info stroke-width='4'></i-progress>
+      </view>
+      <view class='open3 c_sub'>{{item.date}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- footer -->
+<view bindtap='goReport' hover-class='fixedBtn_hover' class='fixedBtn'>查看报告</view>

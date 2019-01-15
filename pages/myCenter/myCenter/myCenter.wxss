@@ -1,0 +1,115 @@
+page{
+  background: #E5E5E5;
+}
+.centerHeader{
+  width: 100%;
+  height: 360rpx;
+  position: absolute;
+  top: 0;
+  z-index: -100;
+}
+.detailHeaderimg{
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.userInfoContainer{
+  width: 100%;
+  height: 360rpx;
+  position: relative;
+}
+.userInfo{
+  width: 100%;
+  height: 130rpx;
+  margin-top: 60rpx;
+  position: absolute;
+  bottom: 30rpx;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: row;
+}
+.headImgp{
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 32rpx;
+}
+.headImg{
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.otherInfo{
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: calc(100% - 180rpx)
+}
+.userName{
+  font-size: 32rpx;
+  color: #DEE5F0;
+}
+.userPhone{
+  font-size: 20rpx;
+  padding: 2rpx 0;
+  border-radius: 50px;
+  border: 1px solid #78ABD4;
+  color: #DEE5F0;
+  width: 168rpx;
+  text-align: center;
+  background: #3883C1;
+}
+.goCode{
+  position: absolute;
+  right: 32rpx;
+  top: 42rpx;
+}
+.codeImg{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+/* four btn */
+.fourBtnContainer{
+  background: #fff;
+  margin-bottom: 16rpx;
+  padding: 46rpx 32rpx;
+}
+.twoContainer{
+  display: flex;
+  flex-direction: row;
+}
+.fourBtnItem{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.fourImgp{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.fourImg{
+  width: 100%;
+  border-radius: 50%;
+}
+fourtext{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.fourtextTop{
+  font-size: 30rpx;
+}
+.fourtextBottom{
+  font-size: 26rpx;
+}
+.group{
+  margin-bottom: 16rpx;
+}

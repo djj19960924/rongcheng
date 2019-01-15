@@ -1,0 +1,21 @@
+.container{
+  width: 100%;
+}
+.top{
+  font-size:30rpx;
+  line-height:46rpx;
+  font-weight:900;
+  padding: 0 20rpx;
+}
+.banner{
+  width: 100%;
+  margin: 32rpx 0;
+}
+.content{
+  padding: 0 20rpx;
+}
+.contentc{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  margin-bottom: 20rpx;
+}

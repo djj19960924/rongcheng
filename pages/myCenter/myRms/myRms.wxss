@@ -1,0 +1,40 @@
+page{
+  background: #E7E7E7;
+}
+.item{
+  margin-bottom: 12rpx;
+  padding: 0 0 0 32rpx;
+  width: 100%;
+  background: #fff;
+}
+.top{
+  font-size: 32rpx;
+  font-weight: 900;
+  padding: 16rpx 0;
+  border-bottom:1px solid #E6E6E6;
+  width: 100%;
+  position: relative;
+}
+.topLeft{
+  width: 70%;
+  display: inline-block;
+}
+.topRight{
+  text-align: right;
+  display: inline-block;
+  background: #F73333;
+  position: absolute;
+  right: 0;
+  color: #fff;
+  font-weight: 400;
+  border-radius: 50px 0 0 50px;
+  font-size: 24rpx;
+  padding: 3px 4px 3px 14px;
+}
+.bottom{
+  font-size: 28rpx;
+  padding-bottom: 2rpx;
+}
+.orderInfo{
+  margin: 14rpx 0;
+}

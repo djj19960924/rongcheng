@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "h_header": "../../../component/h_header/h_header",
+    "i-panel": "../../../dist/panel/index",
+    "i-input": "../../../dist/input/index",
+    "i-message": "../../../dist/message/index"
+  },
+  "navigationBarTextStyle": "black"
+}

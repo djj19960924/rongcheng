@@ -1,0 +1,8 @@
+{
+   "navigationBarTitleText": "荣成智慧健身",
+   "usingComponents": {
+      "i-button": "../../dist/button/index",
+      "i-row": "../../dist/row/index",
+      "i-col": "../../dist/col/index"
+    }
+}

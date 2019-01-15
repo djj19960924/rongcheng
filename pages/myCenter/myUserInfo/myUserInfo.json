@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "h_header": "../../../component/h_header/h_header",
+    "i-cell-group": "../../../dist/cell-group/index",
+    "i-modal": "../../../dist/modal/index",
+    "i-cell": "../../../dist/cell/index",
+    "i-message": "../../../dist/message/index"
+  },
+  "navigationBarTextStyle": "black"
+}

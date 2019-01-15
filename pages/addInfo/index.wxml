@@ -1,0 +1,62 @@
+<!-- header -->
+<h_header back="{{false}}" class='box_top' title='个人信息'></h_header>
+
+<form bindsubmit="formSubmit">
+<view>
+  <view class='inputItemt'>
+    <view class='inputTitle'>请完善个人信息</view>
+  </view>
+
+
+
+  <view class='inputItem'>
+    <view class='inputTitle'>姓名: </view>
+    <view class='inputInput'><input placeholder='请输入姓名(必填)' name='userName'></input></view>
+  </view>
+  <view class='inputItem'>
+    <view class='inputTitle'>性别: </view>
+    <view class='inputInput'>
+      <picker bindchange="bindPickerChange" value="{{sexindex}}" name='sex' range="{{sexarray}}">
+        <view class="picker">{{sexarray[sexindex]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class='inputItem'>
+    <view class='inputTitle'>生日: </view>
+    <view class='inputInput'>
+        <picker name='birthDay'
+          mode="date"
+          value="{{birth}}"
+          start="1900-01-01"
+          end="2099-10-01"
+          bindchange="bindDateChange"
+        >
+          <view class="picker">{{birth}}</view>
+        </picker>
+    </view>
+  </view>
+  <view class='inputItem'>
+    <view class='inputTitle'>手机号: </view>
+    <view class='inputInput'><input type='number' placeholder='请输入手机号(必填)' name='phone'></input></view>
+  </view>
+  <view class='inputItem'>
+    <view class='inputTitle'>身份证: </view>
+    <view class='inputInput'><input placeholder='请输入身份证号' name='idcard'></input></view>
+  </view>
+  <view class='inputItem'>
+    <view class='inputTitle'>身高: </view>
+    <view class='inputInput'><input type='number' placeholder='请输入身高，单位cm(必填)' name='height'></input></view>
+  </view>
+  <view style='border-bottom: 1px solid #F5F6F6' class='inputItem'>
+    <view class='inputTitle'>体重: </view>
+    <view class='inputInput'><input type='number' placeholder='请输入体重，单位kg(必填)' name='weight'></input></view>
+  </view>
+</view>
+
+
+
+<view style='padding:0 15px;margin-top:5vh'>
+  <button class='ok'formType="submit" >确定</button>
+</view>
+
+</form>

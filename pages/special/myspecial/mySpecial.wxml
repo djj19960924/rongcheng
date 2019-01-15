@@ -1,0 +1,52 @@
+<!-- header -->
+<h_header class='box_top' title='我的专家'></h_header>
+
+<!-- loading -->
+<i-toast id="toast" />
+
+<view class='nodata' wx:if="{{specialList.length == '0'}}">
+  <image class='nodataImg' src='/images/nodata.png'></image>
+  <view class='nodataTxt'>您还没有咨询过专家噢 ~</view>
+</view>
+<view wx:else style="height:{{scrollheight}}px">
+  <scroll-view style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="requestSpecial">
+    <view class='specialContainer' wx:for="{{specialList}}" id='{{item.user_id}}' catchtap='specialDetail'>
+      <view class='specialLine1'>
+        <view class='specialHead'>
+          <image mode='widthFix' class='specialHeadImg' src='/images/hlp.png'></image>
+        </view>
+        <view class='specialInfo'>
+          <view><text class='specialName c_title'>{{item.name}}</text> <text class='c_sub'>{{item.professional_titles}}</text></view>
+          <view class='c_sub'>{{item.workunit}}</view>
+          <view data-headimg='{{item.headimg}}' id="{{item.id}}" catchtap="specialGuide" class='specialzixun'>我要咨询</view>
+        </view>
+      </view>
+      <view class='specialLine2 c_sub'>{{item.introduction}}</view>
+      <view class='specialLine3 c_title'>
+        服务人数 : 
+        <text class='specialNum'>{{item.service_count}}</text>
+        <text class='specialDetail'>[详情]</text>
+      </view>
+    </view>
+    <!-- loading -->
+    <view class='listLoading'>
+      <i-spin wx:if="{{loading}}"></i-spin>
+    </view>
+  </scroll-view>
+</view>
+<!-- <scroll-view wx:else style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="requestSpecial">
+
+  <view  wx:for="{{specialList}}" >
+    <button id="{{item.user_id}}" bindtap='specialDetail'>
+    {{item.id}}
+    {{item.workunit}}
+    {{item.professional_titles}}
+    {{item.introduction}}
+    {{item.good_info}}
+    {{item.service_count}}
+    {{item.user_id}}
+    </button>
+
+  </view>
+
+</scroll-view> -->

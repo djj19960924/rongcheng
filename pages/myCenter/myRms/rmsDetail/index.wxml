@@ -1,0 +1,31 @@
+<!-- header -->
+<h_header class='box_top' title='报修详情'></h_header>
+
+<!-- content -->
+<view class='content'>
+  <view class='orderNo'>订单号 : {{order.name}}</view>
+  <view class='title c_title'>维修状态 :
+    <text style='color:#FE3434'>{{item.type == "3" ? '已删除':(item.type == "2" ? '已维修':(item.type == "1" ? '维修中':'待维修')) }}</text>
+  </view>
+  <view class='title c_title'>报修时间 :
+    <text class='c_sub'>{{order.createTime}}</text>
+  </view>
+  <view class='title c_title'>故障说明 :
+    <view class='c_sub'>{{order.content}}</view>
+  </view>
+  <view class='title c_title'>图片描述 :
+    <view class='c_sub'>
+      <view bindtap='previewImg' wx:for="{{order.images}}" class='imgP' wx:for-item="itemimg" wx:key="id" src='{{imgUrlIp+itemimg}}' data-imgurl="{{imgUrlIp+itemimg}}">
+        <image mode='widthFix' class='img' src='{{imgUrlIp+itemimg}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='title c_title'>语音描述 :
+    <view class='voice'><i-icon color='#9A9A9A' size='22' i-class='voiceIcon' type="systemprompt" bindtap='play' data-voiceurl="{{imgUrlIp+order.voiceFile}}"/>
+      <!-- 5S -->
+    </view>
+  </view>
+  <view class='title c_title'>报修地点 :
+    <view class='c_sub'>{{order.position}}</view>
+  </view>
+</view>

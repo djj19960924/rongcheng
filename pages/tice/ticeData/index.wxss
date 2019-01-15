@@ -1,0 +1,136 @@
+page{
+  background: #E5E5E5;
+  padding-bottom: 42px;
+}
+.title{
+  font-size: 32rpx;
+}
+.titleIcon{
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+  margin-right: 24rpx;
+}
+/* c1 */
+.c1,.c2,.c3{
+  margin-bottom: 5px;
+  background: #fff;
+  padding: 0 24rpx;
+  padding-top: 24rpx;
+}
+.c3{
+  padding-bottom: 24rpx;
+}
+.c_item{
+  width: 50%;
+  display: flex;
+  margin-top: 32rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+}
+.c_item_2{
+  font-size: 30rpx;
+  margin-left: 24rpx;
+}
+.c_item_3{
+  font-size: 26rpx;
+}
+.c_item_3_1{
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: 900;
+  margin-left: 24rpx;
+}
+.c1_item_1{
+  color: #fff;
+  background: #FB387C;
+  border-radius: 50%;
+  font-size: 24rpx;
+  width: 54rpx;
+  text-align: center;
+}
+.c2_item_1{
+  color: #fff;
+  background: #F93A30;
+  border-radius: 50%;
+  font-size: 24rpx;
+  width: 54rpx;
+  text-align: center;
+}
+.c3_item_1{
+  color: #fff;
+  background: #0192D6;
+  border-radius: 50%;
+  font-size: 24rpx;
+  width: 54rpx;
+  text-align: center;
+}
+.bmiImg{
+  width: 100%;
+  margin: 32rpx 0;
+}
+/* list */
+.listItemp{
+  border-bottom: 1px solid #E8E8E8;
+}
+.listItem{
+  padding: 24rpx 0;
+  width: 100%;
+  position: relative;
+}
+.listItemp:last-child{
+  border: 0;
+}
+.listItem_1{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 28rpx;
+  vertical-align: middle;
+}
+.listItem_2{
+  font-size: 28rpx;
+}
+.listItem_3{
+  font-weight: 900;
+  font-size: 36rpx;
+  padding-left: 36rpx;
+}
+.listItem_4{
+  font-size: 24rpx;
+}
+.listItem_5{
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: middle;
+  margin-left: 40rpx;
+}
+.listItem_6{
+  position: absolute;
+  right: 12rpx;
+  top: 46rpx;
+}
+.openp{
+  font-size: 24rpx;
+  display: flex;
+  padding: 10rpx 10rpx 34rpx 6rpx;
+  justify-content: space-between;
+}
+.open2{
+  width: 240rpx;
+}
+
+/* footer */
+.fixedBtn{
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  background: #0192D6;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 30rpx;
+  bottom: 0;
+}
+.fixedBtn_hover{
+  background: #0881B9
+}

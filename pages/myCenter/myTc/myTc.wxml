@@ -1,0 +1,29 @@
+<!-- header -->
+<h_header class='box_top' title='体测报告'></h_header>
+
+<h_nodata wx:if="{{!arr.length}}" tips = '您还没有体测过噢 ~'></h_nodata>
+
+<!-- content -->
+<scroll-view wx:if="{{arr.length}}" scroll-y = "true" style="height:{{scrollheight}}px">
+  <view wx:for="{{arr}}" class='item' >
+    <view class='top'>
+      <text class='topLeft c_title'>体测类别 : 国民体测</text>
+      <text class='topRight c_title'>{{item.date}}</text>
+    </view>
+    <view class='bottom'>
+      <view class='bottomLeft'>
+        <view class='bottomLeft_top'>
+          <i-progress percent="{{ item.level_percent }}" status="wrong" hide-info stroke-width='8'></i-progress>
+          <text class='bottomLeft_top_txt c_sub'>及格</text>
+        </view>
+        <view class='bottomLeft_bottom'>
+          <i-progress percent="{{ item.score_percent }}" hide-info stroke-width='8'></i-progress>
+          <text class='bottomLeft_bottom_txt c_sub'>总分 : {{item.score}}</text>
+        </view>
+      </view>
+      <view class='bottomRight'>
+        <text bindtap='goData' data-id='{{item.id}}' class='bottomRightBtn'>查看体测数据</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

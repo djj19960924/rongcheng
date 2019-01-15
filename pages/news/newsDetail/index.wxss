@@ -1,0 +1,16 @@
+.page{
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.title{
+  font-size: 36rpx;
+  text-align: center;
+}
+.sub{
+  font-size: 24rpx;
+  margin-top: 32rpx;
+}
+.content{
+  font-size: 32rpx;
+  margin-top: 32rpx;
+}

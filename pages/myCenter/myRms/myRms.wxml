@@ -1,0 +1,23 @@
+<!-- header -->
+<h_header class='box_top' title='我的报修单'></h_header>
+
+<h_nodata wx:if="{{!demoArr.length}}" tips = '您还没有报修过噢 ~'></h_nodata>
+
+<!-- content -->
+<scroll-view wx:if="{{mOrderList.length}}" scroll-y = "true" style="height:{{scrollheight}}px">
+  <view bindtap='toDetail' wx:for="{{mOrderList}}" class='item' wx:key="index" data-id="{{item.id}}">
+    <view class='top'>
+      <text class='topLeft c_title'>订单号 : {{item.name}}</text>
+      <text class='topRight c_title'>{{item.type == "3" ? '已删除':(item.type == "2" ? '已维修':(item.type == "1" ? '维修中':'待维修')) }}</text>
+    </view>
+    <view class='bottom'>
+      <view class='c_sub orderInfo'><i-icon color='#3F9DF7' type="clock_fill" /> 报修时间 : {{item.createTime}}
+    
+      </view>
+      <view class='c_sub orderInfo'><i-icon color='#17A409' type="coordinates_fill" /> 报修地点 :{{item.position}}
+      </view>
+      <view class='c_sub orderInfo'><i-icon color='#FE3434' type="feedback_fill" /> 故障说明 : {{item.content}}
+      </view>
+    </view>
+  </view>
+</scroll-view>

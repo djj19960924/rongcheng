@@ -1,0 +1,83 @@
+<!-- header -->
+<h_header class='box_top' title='设施报修'></h_header>
+
+<!-- map -->
+<map
+  id="map"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="16"
+  bindcontroltap="controltap"
+  bindmarkertap="markertap"
+  bindregionchange="regionchange"
+  show-location
+  style="width: 100%; height: 25vh;"
+  enable-overlooking="{{true}}"
+  enable-rotate="{{true}}"
+></map>
+
+<!--  -->
+<view class='weizhip'>
+  <view class='weizhit c_title'>定位信息</view>
+  <view class='weizhi c_sub'>
+    <i-icon i-class='weizhiicon' color='#FB1301' size='22' type="coordinates_fill" />
+    {{weizhi}}
+  </view>
+</view>
+
+<!--  -->
+<view class='remarkp'>
+  <view class='remarkt c_title'>故障说明</view>
+  <textarea placeholder='请描述故障原因(设备名称、故障描述等)' bindinput="listenDescribe"></textarea>
+</view>
+
+<!--  -->
+<view class='yuyinp'>
+  <view class='yuyint c_title'>语音描述</view>
+  <view class='yuyinConteiner'>
+    <view wx:if="{{!tempFilePathRecord}}" bindtap="start" class='yuyin'>
+      <i-icon size='20' type="translation" />
+      开始录音
+    </view>
+    <view wx:if="{{tempFilePathRecord == 1}}" bindtap="stop" class='yuyin'>
+      <i-icon size='20' type="translation" />
+      停止录音
+    </view>
+    <view wx:if="{{tempFilePathRecord == 2}}" bindtap="stop" class='yuyin'>
+      <i-icon size='20' type="translation" />
+      重新录音
+    </view>
+    <view wx:if="{{tempFilePathRecord}}" bindtap='play' class='play'>{{tempFilePathRecord==1?'正在录音..':'播放'}}</view> 
+  </view>
+</view>
+
+<!--  -->
+<view class='imgp'>
+  <view class='imgt c_title'>图片描述({{files.length}}/10)</view>
+  
+  <view class="weui-uploader__bd picture-container">
+    <view class="weui-uploader__files" id="uploaderFiles">
+      <block wx:for="{{files}}" wx:key="*this">
+        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+          <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+        </view>
+      </block>
+    </view>
+    <view class="weui-uploader__input-box" wx:if="{{files.length < 10}}">
+      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+    </view>
+  </view>
+</view>
+
+<!--  -->
+<view class='imgp'>
+  <view class='imgt c_title'>联系方式</view>
+  <view class='tel'>
+    <i-icon i-class='telicon' color='#0192D6' size='22' type="mobilephone_fill" />
+    <input type='number' bindinput="listenPhone" class='telinput' placeholder='请输入手机号' placeholder-class='telplaceholder'></input>
+  </view>
+</view>
+
+<view class='submitp'>
+  <view class='submit' bindtap='bx_submit'>提交</view>
+</view>

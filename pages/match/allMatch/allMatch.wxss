@@ -1,0 +1,56 @@
+.list_container{
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+}
+.listItem{
+  width: 100%;
+  margin-bottom: 16px;
+}
+.itemTop{
+  width: 100%;
+  height: 120px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.itemImg{
+  width: 100%;
+  border-radius: 5px;
+}
+.itemCenter{
+  color: #000;
+  font-size: 32rpx;
+  margin: 6px 0 1px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.itemBottom{
+  font-size: 24rpx;
+}
+.itemBottomRight{
+  float: right;
+}
+.itemFooter{
+  font-size: 24rpx;
+  color: #0192D6;
+  margin-top: 6px;
+}
+.itemFooterRight{
+  float: right;
+}
+.itemFooterLeft1{
+  color: #fff;
+  background: #0192D6;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 20rpx;
+  margin-right: 12px;
+}
+.itemFooterLeft2{
+  border: 1px solid #0192D6;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 20rpx;
+  margin-right: 10px;
+}

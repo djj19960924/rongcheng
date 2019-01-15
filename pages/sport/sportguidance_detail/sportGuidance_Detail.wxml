@@ -1,0 +1,80 @@
+<!-- header -->
+<h_header class='box_top' title='{{title}}'></h_header>
+
+<view class='title'>
+  <image class='left' src='/images/icon.png' mode='widthFix'></image>
+  <view class='right'>
+    <view class='c_title rightTop'>{{activeType}}</view>
+    <view class='c_sub rightBottom'>{{exerciseName}}</view>
+  </view>
+</view>
+
+<view class='content'>
+  <view class='contentTop'>
+    锻炼要点
+  </view>
+  <view class='contentBottom c_sub'>
+  {{exercisePoint}}
+     </view>
+</view>
+
+<view class='content'>
+  <view class='contentTop'>
+    锻炼强度
+  </view>
+  <view class='contentBottom c_sub'>
+    {{intensity}}
+  </view>
+</view>
+
+<view style='border:0' class='content'>
+  <view class='contentTop'>
+    锻炼频率
+  </view>
+  <view class='pinlv c_sub'>
+    每周{{frequencyL}} - {{frequencyH}}次
+  </view>
+  <view class='pinlv c_sub'>
+    {{suggestTimes}}
+  </view>
+  <view style='padding-bottom:20rpx;' class='pinlv c_sub'>
+    {{notice}}
+  </view>
+</view>
+
+
+<!-- <view>
+{{activeType}}
+
+</view>
+
+<view>
+{{exerciseName}}
+</view>
+
+<view> -->
+<!-- 锻炼要点-->
+<!-- 锻炼要点:
+{{exercisePoint}}
+
+</view>
+
+
+<view> -->
+<!-- 锻炼强度-->
+<!-- 锻炼强度:
+{{intensity}}
+</view>
+
+<view>
+每周{{frequencyL}}-{{frequencyH}}次;
+<view wx:if='{{suggesTimes != ""}}'>
+  {{suggestTimes}}
+</view>
+
+
+<view>
+{{notice}}
+</view>
+
+</view> -->

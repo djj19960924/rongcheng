@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "i-button": "../../../dist/button/index",
+    "i-toast": "../../../dist/toast/index",
+    "i-spin": "../../../dist/spin/index",
+    "h_header": "../../../component/h_header/h_header",
+    "i-load-more": "../../../dist/load-more/index"
+  },
+  "navigationBarTextStyle": "black"
+}

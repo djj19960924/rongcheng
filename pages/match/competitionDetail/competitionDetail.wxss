@@ -1,0 +1,31 @@
+.content{
+  width: 100%;
+  padding: 10px 16px;
+}
+.title{
+  font-size: 36rpx;
+  width: 80%;
+  margin: 0 auto 16px auto; 
+  text-align: center;
+}
+.info{
+  font-size: 24rpx;
+  margin-bottom: 8px;
+}
+.detail{
+  font-size: 28rpx
+}
+.fixedBtn{
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  background: #0192D6;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 30rpx;
+  bottom: 0;
+}
+.fixedBtn_hover{
+  background: #0881B9
+}
