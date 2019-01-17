@@ -28,13 +28,50 @@ Page({
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    loading: true
+    loading: true,
+    animationData:{},
+    animationData1:{},
+    animationData2: {}
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // const animation = wx.createAnimation({
+    //   duration: 600,
+    //   timingFunction: 'linear',
+    // })
+    // this.animation = animation
+    // var count = 0;
+    // setInterval(function () {
+    //   console.log(1)
+    //   animation.rotate(180).step()
+    //   this.setData({
+    //     animationData: animation.export()
+    //   })
+    //   if(count%2==0){
+    //     animation.scale(2).rotate(180).step()
+    //     this.setData({
+    //       animationData1: animation.export()
+    //     })
+    //     animation.scale(0.5).rotate(180).step()
+    //     this.setData({
+    //       animationData2: animation.export()
+    //     })
+    //   }else{
+    //     animation.scale(2).rotate(180).step()
+    //     this.setData({
+    //       animationData2: animation.export()
+    //     })
+    //     animation.scale(0.5).rotate(180).step()
+    //     this.setData({
+    //       animationData1: animation.export()
+    //     })
+    //   }
+    //   count+=501
+
+    // }.bind(this), 501)
     // return;
     let that = this;
 

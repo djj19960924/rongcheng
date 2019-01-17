@@ -15,7 +15,7 @@
       lineB = "简介 : {{ item.matchDescription }}"
       lineC = "成立时间 : {{ item.createTime }}"
       lineD = '协会人数 : {{ item.memberCount }}'
-      lineDImg = '/images/club/king.png'
+      lineDImg = '/pages/match/images/king.png'
       imgH = '82'
     ></h_card_simple>
   </view>

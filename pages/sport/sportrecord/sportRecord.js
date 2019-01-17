@@ -79,7 +79,7 @@ Page({
     
 
     //确定按钮
-    var cal = 200;
+    var cal = (sportRecord.sportratio*60).toFixed(0);
     var minutes = 60;
     saveSportRecord(cal, minutes, sportRecord.sporttypeid);
     

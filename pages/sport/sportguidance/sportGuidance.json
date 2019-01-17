@@ -1,8 +1,11 @@
 {
   "usingComponents": {
+    "ff-canvas": "@antv/f2-canvas",
     "i-icon": "../../../dist/icon/index",
     "i-button": "../../../dist/button/index",
     "i-toast": "../../../dist/toast/index",
-    "i-spin": "../../../dist/spin/index"
+    "i-spin": "../../../dist/spin/index",
+    "i-row": "../../../dist/row/index",
+    "i-col": "../../../dist/col/index"
   }
 }

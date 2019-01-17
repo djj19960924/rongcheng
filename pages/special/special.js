@@ -1,4 +1,3 @@
-
 // miniprogram/pages/special/special.js
 var app = getApp();
 const { $Toast } = require('../../dist/base/index');
@@ -16,13 +15,11 @@ function requestList(pageIndex, that) {
 
     success:function(res){
       var specialList = res.data.data.specialList;
-      
-     
+      console.log("djj:", specialList)
       for(var i = 0 ; i < specialList.length; i++ ){
         arr.push(specialList[i]);
       }
- 
-    
+
       setTimeout(function () {
         that.setData({
           specialList: arr,
@@ -31,18 +28,19 @@ function requestList(pageIndex, that) {
         })
         $Toast.hide();
       },800)
+      
     }
   })
 }
 
 Page({
 
-  myspecial: function () {
-    wx.navigateTo({
-      url: '/pages/special/myspecial/mySpecial',
+  // myspecial: function () {
+  //   wx.navigateTo({
+  //     url: '/pages/special/myspecial/mySpecial',
 
-    })
-  },
+  //   })
+  // },
 
   specialDetail: function (e) {
     var user_id = e.currentTarget.id;
@@ -75,8 +73,15 @@ Page({
   
   data: {
     platform: app.globalData.platform,
-    ali:app.globalData.ali
+    ali:app.globalData.ali,
+    date: '2019-1-17',
   }, 
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
   
   onLoad: function (options) {
 

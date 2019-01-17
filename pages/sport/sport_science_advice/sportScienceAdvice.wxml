@@ -3,7 +3,7 @@
 
 <view class='container'>
   <view class='top c_title'>{{scienceAdvice}}</view>
-  <image mode='widthFix' class='banner' src='/images/sport/kxjy.png'></image>
+  <image mode='widthFix' class='banner' src='../images/kxjy.png'></image>
   <view class='content'>
     <view class='contentc c_sub'>1、在保证蛋白质供给的基础上适当增加优质蛋白的供应，如禽畜肉、鱼、奶、豆类等；碳水化合物应占全日总能量的55%-65%，主食不宜过精过细。适当摄入脂肪，但要限制摄入动物脂肪，植物脂肪也不应太多，脂肪总量以不超过全日总能量的25%为宜。胆固醇的摄入量不超过300mg。</view>
     <view class='contentc c_sub'>2、适量多摄入富含维生素C的食物，如橘子、卷心菜、土豆、红薯以及绿色、黄色蔬菜和富含维生素B2的食物，如蛋奶类、鱼虾类、绿叶蔬菜等，以提高运动能力，延缓运动疲劳的发生和增强肌肉收缩力。</view>

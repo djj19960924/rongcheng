@@ -4,7 +4,7 @@
 <!-- content1 -->
 <view class='c1'>
   <view class='title c_title'>
-    <image class='titleIcon' src='/images/tice/title1.png'></image>
+    <image class='titleIcon' src='../images/title1.png'></image>
     <text>身体基础数据</text>
   </view>
   <view style='display:flex'>
@@ -26,23 +26,23 @@
       <view class='c_item_3 c_sub'><text class='c_item_3_1'>{{bmi}}</text><text style="font-size:20rpx"> ( 标准 )</text></view>
     </view>
   </view>
-  <image class='bmiImg' mode='widthFix' src='/images/tice/bmi2.png'></image>
+  <image class='bmiImg' mode='widthFix' src='../images/bmi2.png'></image>
 </view>
 
 <!-- content2 -->
 <view class='c2' wx:if='{{okCount > 0}}'>
   <view class='title c_title'>
-    <image class='titleIcon' src='/images/tice/ok.png'></image>
+    <image class='titleIcon' src='../images/ok.png'></image>
     <text>{{ okCount }}项目放心指标</text>
   </view>
   <!--  -->
   <view class='listItemp' wx:for="{{ticeData}}" wx:if="{{item.grade > 2}}">
     <view bindtap='openorclose' data-name='{{item.name}}' class='listItem'>
-      <image class='listItem_1' src='/images/tice/tc_{{item.icon}}_gray.png'></image>
+      <image class='listItem_1' src='../images/tc_{{item.icon}}_gray.png'></image>
       <text class='listItem_2 c_title'>{{item.name}}</text>
       <text class='listItem_3 c_title'>{{item.score}}</text>
       <text class='listItem_4 c_sub'> {{item.danwei}}</text>
-      <image class='listItem_5' src='/images/tice/grade{{item.grade == 3 ? 2 :3}}.png'></image>
+      <image class='listItem_5' src='../images/grade{{item.grade == 3 ? 2 :3}}.png'></image>
       <i-icon wx:if="{{item.isopen}}" color='#0192D6' i-class='listItem_6' type="packup" />
       <i-icon wx:if="{{!item.isopen}}" i-class='listItem_6' type="unfold" />
     </view>
@@ -59,17 +59,17 @@
 
 <view class='c2' wx:if='{{riskCount > 0}}'>
   <view class='title c_title'>
-    <image class='titleIcon' src='/images/tice/title2.png'></image>
+    <image class='titleIcon' src='../images/title2.png'></image>
     <text>{{ riskCount }}项指标需特别注意</text>
   </view>
   <!--  -->
   <view class='listItemp' wx:for="{{ticeData}}" wx:if="{{item.grade < 3}}">
     <view bindtap='openorclose' data-name='{{item.name}}' class='listItem'>
-      <image class='listItem_1' src='/images/tice/tc_{{item.icon}}_gray.png'></image>
+      <image class='listItem_1' src='../images/tc_{{item.icon}}_gray.png'></image>
       <text class='listItem_2 c_title'>{{item.name}}</text>
       <text class='listItem_3 c_title'>{{item.score}}</text>
       <text class='listItem_4 c_sub'> {{item.danwei}}</text>
-      <image class='listItem_5' src='/images/tice/grade1.png'></image>
+      <image class='listItem_5' src='../images/grade1.png'></image>
       <i-icon wx:if="{{item.isopen}}" color='#0192D6' i-class='listItem_6' type="packup" />
       <i-icon wx:if="{{!item.isopen}}" i-class='listItem_6' type="unfold" />
     </view>

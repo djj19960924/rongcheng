@@ -2,7 +2,7 @@
 <h_header class='box_top' title='关于我们'></h_header>
 
 <view class='code'>
-  <image mode='widthFix' class='logo' src='/images/my/logo.png'></image>
+  <image mode='widthFix' class='logo' src='/images/logo.png'></image>
 </view>
 <view class='text'>
   荣成市体育局
@@ -11,7 +11,7 @@
   问题反馈 : luke@paobapaoba.com
 </view>
 <view class='banben'>
-  <image class='banben_img' src='/images/my/banben.png'></image>
+  <image class='banben_img' src='../images/banben.png'></image>
   版本号 v1.0.0
 </view>
 <view class='text zhichi'>

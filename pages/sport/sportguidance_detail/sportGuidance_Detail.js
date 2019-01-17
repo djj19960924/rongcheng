@@ -14,6 +14,7 @@ Page({
   onLoad: function (options) {
     //运动
     var sportRecommend = wx.getStorageSync('sportrecommend');
+    console.log(sportRecommend)
 
     this.setData({
       activeType: sportRecommend.activeType,
@@ -23,7 +24,8 @@ Page({
       frequencyL: sportRecommend.frequencyL,
       frequencyH: sportRecommend.frequencyH,
       suggestTimes: sportRecommend.suggestTimes,
-      notice: sportRecommend.notice
+      notice: sportRecommend.notice,
+      iconName: sportRecommend.iconName
     })
 
     console.log(wx.getStorageSync('sportrecommend'));

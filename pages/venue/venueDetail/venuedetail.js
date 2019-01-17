@@ -9,59 +9,59 @@ Page({
     service: [
       {
         name: '无线',
-        icon: '/images/venue/service1.png'
+        icon: '../images/service1.png'
       },
       {
         name: '休息区',
-        icon: '/images/venue/service2.png'
+        icon: '../images/service2.png'
       },
       {
         name: '停车',
-        icon: '/images/venue/service3.png'
+        icon: '../images/service3.png'
       },
       {
         name: '储物间',
-        icon: '/images/venue/service4.png'
+        icon: '../images/service4.png'
       },
       {
         name: '公交',
-        icon: '/images/venue/service5.png'
+        icon: '../images/service5.png'
       },
       {
         name: '卖品',
-        icon: '/images/venue/service6.png'
+        icon: '../images/service6.png'
       },
       {
         name: '器材',
-        icon: '/images/venue/service7.png'
+        icon: '../images/service7.png'
       },
       {
         name: '地板',
-        icon: '/images/venue/service8.png'
+        icon: '../images/service8.png'
       },
       {
         name: '塑胶地',
-        icon: '/images/venue/service9.png'
+        icon: '../images/service9.png'
       },
       {
         name: '更衣室',
-        icon: '/images/venue/service10.png'
+        icon: '../images/service10.png'
       },
       {
         name: '洗手间',
-        icon: '/images/venue/service11.png'
+        icon: '../images/service11.png'
       },
       {
         name: '灯光',
-        icon: '/images/venue/service12.png'
+        icon: '../images/service12.png'
       },
       {
         name: '教练',
-        icon: '/images/venue/service13.png'
+        icon: '../images/service13.png'
       },
       {
         name: '空调',
-        icon: '/images/venue/service14.png'
+        icon: '../images/service14.png'
       },
     ]
   },

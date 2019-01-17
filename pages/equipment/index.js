@@ -278,7 +278,7 @@ function getAreas() {
 function getAllArea() {
   console.log("city:",app.globalData.citySign)
   wx.showLoading({
-    title: '加载中...',
+    title: '加载中',
   })
   var that = this;
   wx.request({

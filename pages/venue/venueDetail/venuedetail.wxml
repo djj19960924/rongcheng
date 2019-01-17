@@ -6,7 +6,7 @@
 
 <view class='item'>
   <view class='title'>{{venue.gym_name}}
-    <image bindtap='call' class='callIcon' src='/images/venue/tel.png'></image>
+    <image bindtap='call' class='callIcon' src='../images/tel.png'></image>
   </view>
   <view bindtap='go' style='margin-top:10px;' class='content enter'>{{venue.address}}
     <i-icon wx:if="{{venue.connect_user_tel}}" i-class='enterIcon' size='20' type="enter" />

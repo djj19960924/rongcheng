@@ -1,0 +1,110 @@
+<!-- header -->
+<image style='z-index:-100' class='bg' mode='widthFix' src='/images/3/sport_bg.png'></image>
+<view wx:if="{{platform == 'ios'}}" style='top:24pt' class='whitePageTitle'>运动目标</view>
+<view wx:if="{{platform == 'android'}}" style='top:30pt' class='whitePageTitle'>运动目标</view>
+<view wx:if="{{platform == 'devtools'}}" style='top:24pt' class='whitePageTitle'>运动目标</view>
+<view wx:if="{{platform == 'ios'}}" style='width:100%;height:56pt'></view>
+<view wx:if="{{platform == 'android'}}" style='width:100%;height:62pt'></view>
+<view wx:if="{{platform == 'devtools'}}" style='width:100%;height:56pt'></view>
+
+<!-- tab -->
+<view class='tabContainer'>
+  <view bindtap='chooseDateTarget' class='rili'><i-icon color='#C6CCCE' size='24' type="activity" /></view>
+  <view class='tab'>
+      <text class='tabLeft'>每日运动</text>
+      <text bindtap='queryGuidance' class='tabRight'>健康指导</text>
+  </view>
+</view>
+
+<!-- run -->
+<view class='runContainer'>
+  <image class='runbg' src='/images/3/yuan.png'></image>
+  <view class='runContent'>
+    <view class='run_c_1'>今日运动</view>
+    <view class='run_c_2'>{{toDayStepNumber || '0'}}</view>
+    <view class='run_c_3'>距离目标 : {{remainStepNumber || '0'}}步</view>
+    <view class='run_c_4'><text bindtap='setSportTarget' class='run_c_4_btn'>设置目标</text></view>
+  </view>
+</view>
+
+<view class='hu_parent'>
+  <view class='hu'></view>
+</view>
+
+<view class='content'>
+  <!-- 科学建议 -->
+  <view style='width:100%;padding: 0 32rpx;'>
+    <view class='title c_title'>
+      科学建议
+      <text class='titleRight' bindtap='scienceAdvice'>查看详情</text>
+    </view>
+    <view class='adviceLine1'>
+      <view class='adviceItem'>
+        <view class='adviceTitle c_sub'>建议摄入热量</view>
+        <view><text class='adviceValue'>{{dayAdviceAddCal}} </text><text class='adviceNum c_sub'>千卡</text></view>
+      </view>
+      <view class='adviceItem'>
+        <view class='adviceTitle c_sub'>还可以吃</view>
+        <view><text class='adviceValue'>{{dayStillNeedAddCal}} </text><text class='adviceNum c_sub'>千卡</text></view>
+      </view>
+    </view>
+    <view style='display:flex;width:100%;margin-top:16rpx'>
+      <view class='adviceItem'>
+        <view class='adviceTitle c_sub'>平均每天消耗</view>
+        <view><text class='adviceValue'>{{dayTotalConsumeCal}} </text><text class='adviceNum c_sub'>千卡</text></view>
+      </view>
+      <view class='adviceItem'>
+        <view class='adviceTitle c_sub'>还需要运动</view>
+        <view><text class='adviceValue'>{{dayStillNeedConsumeCal}} </text><text class='adviceNum c_sub'>千卡</text></view>
+      </view>
+    </view>
+  </view>
+ 
+  <view style='margin-top:10px' class='cutline'></view>
+
+  <!-- 运动记录 -->
+  <view style='width:100%;padding: 0 32rpx;'>
+    <view class='title c_title'>
+      运动记录
+      <text wx:if="{{!disable}}" class='titleRight' bindtap='addSportRecord'>添加</text>
+    </view>
+    <view class='noRecord' wx:if="{{!sportRecords.length}}">运动过后，别忘了添加运动记录哦 ~</view>
+    <view wx:if="{{sportRecords.length}}" wx:for="{{sportRecords}}" bindtap='changeSportTime' data-item='{{item}}' class='sportItem'>
+      <image class='sportImg' src='{{"https://paoba.oss-cn-beijing.aliyuncs.com/paoba/" + item.sportType.sportIcon + ".png"}}'></image>
+      <view class='sportInfo'>
+        <view class='sportEnter c_sub'><i-icon type="enter" /></view>
+        <view class='sportInfoLine1 c_title'>{{item.sportType.sportName}}</view>
+        <view class='sportInfoLine2 c_sub'><text style='color:#F80707'>{{item.sportConsumeCal}}</text> 千卡/{{item.sportDuration}}分钟</view>
+      </view>
+    </view>
+  </view>
+
+  <view style='margin-top:10px' class='cutline'></view>
+
+  <!-- 饮食记录 -->
+  <view style='width:100%;padding: 0 32rpx;'>
+    <view class='title c_title'>
+      饮食记录
+      <text wx:if="{{!disable}}" class='titleRight' bindtap='addSportEatRecord'>添加</text>
+    </view>
+    <view class='noRecord' wx:if="{{!sportEatRecords.length}}">今天吃了什么，告诉我一下吧 ~</view>
+    <view wx:if="{{sportEatRecords.length}}" wx:for="{{sportEatRecords}}" bindtap='changeFoodWeight' data-item='{{item}}'  class='sportItem'>
+      <view class='foodImgp'>
+        <image class='foodImg' mode='widthFix' src='{{item.sportEatType.foodIcon}}'></image>
+      </view>
+      <view class='sportInfo'>
+        <view class='sportEnter c_sub'><i-icon type="enter" /></view>
+        <view class='sportInfoLine1 c_title'>{{item.sportEatType.foodName}}</view>
+        <view class='sportInfoLine2 c_sub'><text style='color:#F80707'>{{item.eatFoodCal}}</text> 千卡/{{item.eatFoodGram}}克</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<i-modal title='运动时间(分钟)' visible="{{ visible_sport }}" bind:ok="handleOk_sport" bind:cancel="handleClose_sport">
+    <input value='{{currentValue}}' type='number' focus="{{isFocus_sport}}" bindinput='watchValue'></input>
+</i-modal>
+<i-modal title='食物重量(克)' visible="{{ visible_food }}" bind:ok="handleOk_food" bind:cancel="handleClose_food">
+    <input value='{{currentValue}}' type='number' focus="{{isFocus_food}}" bindinput='watchValue'></input>
+</i-modal>

@@ -1,0 +1,9 @@
+# dependencies
+**/node_modules
+
+# production
+# /dist
+/.vscode
+
+# chart
+/miniprogram_npm

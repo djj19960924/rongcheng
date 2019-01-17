@@ -1,14 +1,21 @@
 // miniprogram/pages/showIndex/showIndex.js
 const app = getApp();
+const utils = require('../../utils/utils.js')
 
 var arr = [];
 Page({
+
+
+  
+
   sport: function() {
     wx.switchTab({
-      url: '/pages/sport/sportIndex',
+      url: '/pages/tab3/index',
     })
 
   },
+
+
   questions: function() {
     wx.navigateTo({
       url: '/pages/special/question/question',
@@ -63,13 +70,13 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     competition_list: [],
     imgUrls: [
-      '/images/index/banner.png',
-      '/images/index/banner.png',
-      '/images/index/banner.png',
+      '/images/1/banner.png',
+      '/images/1/banner.png',
+      '/images/1/banner.png',
     ],
     ads: [
-      '/images/index/adv.png',
-      '/images/index/adv.png',
+      '/images/1/adv.png',
+      '/images/1/adv.png',
     ],
     aliImageAddr: app.globalData.ali
   },
@@ -109,13 +116,18 @@ Page({
    */
 
   onLoad: function() {
+
     console.log('======== index onload ========')
+
     var start = new Date().getTime()
     // wx.showLoading({
     //   title: '初始化...',
     // })
     let that = this
+
+
     if (that.data.canIUse) {
+
       /**
        * 登陆
        */
@@ -127,6 +139,10 @@ Page({
           console.log(res)
 
           if (res.errMsg == "login:ok") {
+
+    
+
+
             wx.request({
               url: app.globalData.base_url + '/user/login/login',
               method: 'POST',
@@ -142,9 +158,14 @@ Page({
               },
               success: function(res) {
                 console.log(res)
+
+
                 if (res.data.meta.code == 200) {
-                  app.globalData.userInfo = res.data.data.data;
-                  console.log("djj:",app.globalData.userInfo);
+
+                  app.globalData.userInfo =
+                    res.data.data.data;
+                  console.log(app.globalData.userInfo);
+
                   wx.showToast({
                     title: '登陆成功',
                     icon: 'none'
@@ -162,7 +183,15 @@ Page({
                     title: '微信登陆失败，重新登陆！',
                     content: '',
                     success: function(res) {
-                     
+                      // if (res.confirm) {
+                      //   wx.reLaunch({
+                      //     url: '../showIndex/showIndex',
+                      //   })
+                      // } else if (res.cancel) {
+                      //   wx.navigateBack({
+                      //     delta: -1
+                      //   })
+                      // }
                     }
                   })
                 }
@@ -214,7 +243,21 @@ Page({
            * 登陆失败　
            */
           wx.hideLoading()
-          
+          // wx.showModal({
+          //   title: '微信登陆失败，重新登陆！',
+          //   content: '',
+          //   success: function (res) {
+          //     if (res.confirm) {
+          //       wx.reLaunch({
+          //         url: '../index/index',
+          //       })
+          //     } else if (res.cancel) {
+          //       wx.navigateBack({
+          //         delta: -1
+          //       })
+          //     }
+          //   }
+          // })
         },
         complete: res => {
           console.log(res)
@@ -262,16 +305,15 @@ Page({
           let endTime = new Date(competition_result[i].endTime);
 
           let competition_item = {};
-          competition_item.startTime = startTime.getFullYear() + '.' +
-            startTime.getMonth() + '.' + startTime.getDate();
-          competition_item.endTime = endTime.getFullYear() + '.' +
-            endTime.getMonth() + '.' + endTime.getDate();
+          competition_item.startTime = utils.getnyr(startTime);
+          competition_item.endTime = utils.getnyr(endTime);
           competition_item.competitionName = competition_result[i].competitionName;
           competition_item.status = competition_result[i].status;
 
-          competition_item.timeDiff = that.timeFn(competition_result[i].startTime);
+          competition_item.timeDiff = utils.timeFn(competition_result[i].startTime);
           competition_item.competitionId = competition_result[i].competitionId;
-          competition_item.competitionImg = competition_result[i].competitionImg;
+          competition_item.competitionImg = competition_result[i].competitionImg; 
+          competition_item.location = competition_result[i].location; 
 
           competition_list.push(competition_item);
         }
@@ -296,6 +338,8 @@ Page({
           "content-type": "application/json;charset=UTF-8"
         },
         success: function (res) {
+
+
           var list = res.data.data.list
           var newsimage;
           for (var i = 0; i < list.length; i++) {
@@ -307,31 +351,11 @@ Page({
             newsimage: newsimage
           })
         }
+
+
       })
+
   },
-
-  // 时间差计算函数
-  timeFn: function (d1) {
-    //di作为一个变量传进来
-    var dateBegin = new Date(d1);
-    var dateEnd = new Date(); //获取当前时间
-    var dateDiff = dateEnd.getTime() - dateBegin.getTime(); //时间差的毫秒数
-    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000)); //计算出相差天数
-    var leave1 = dateDiff % (24 * 3600 * 1000) //计算天数后剩余的毫秒数
-    var hours = Math.floor(leave1 / (3600 * 1000)) //计算出小时数
-    //计算相差分钟数
-    var leave2 = leave1 % (3600 * 1000) //计算小时数后剩余的毫秒数
-    var minutes = Math.floor(leave2 / (60 * 1000)) //计算相差分钟数
-    //计算相差秒数
-    var leave3 = leave2 % (60 * 1000) //计算分钟数后剩余的毫秒数
-    var seconds = Math.round(leave3 / 1000)
-    // console.log(" 相差 " + dayDiff + "天 " + hours + "小时 " + minutes + " 分钟" + seconds + " 秒")
-    // console.log(dateDiff + "时间差的毫秒数", dayDiff + "计算出相差天数", leave1 + "计算天数后剩余的毫秒数"
-    //   , hours + "计算出小时数", minutes + "计算相差分钟数", seconds + "计算相差秒数");
-
-    return dateDiff + '天' + hours + '小时' + minutes + '分';
-  },
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成

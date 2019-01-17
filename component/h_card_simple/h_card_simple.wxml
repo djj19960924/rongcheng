@@ -11,7 +11,7 @@
     {{lineD}}
     </view>
     <view>
-      <text wx:if="{{line_tabs.length}}" class='tabs' style='color:{{item.color}};background:{{item.background}};border:1px solid {{item.border}}' wx:for="{{line_tabs}}" wx:key="index">{{item.name}}</text>
+      <text wx:if="{{line_tabs.length}}" class='tabs' style='color:{{item.color}};background:{{item.background}};border:1px solid {{item.border}}' wx:for="{{line_tabs}}">{{item.name}}</text>
     </view>
   </view>
 </view>

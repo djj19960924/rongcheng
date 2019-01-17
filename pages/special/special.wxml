@@ -1,30 +1,51 @@
 <!-- header -->
-<h_header class='box_top' title='专家指导'></h_header>
+<h_header class='box_top' title='运动指导'></h_header>
 
 <!-- banner -->
 <view class='banner box_top'>
-  <image class='bannerImg' mode='widthFix' src='/images/special/banner.png'></image>
+  <image class='bannerImg' mode='widthFix' src='images/banner.png'></image>
+</view>
+
+
+<view class='myspecial box_top'>体测数据
+  <text class="myspecial_time">(更新至2019-01-16)</text>
+
+  <picker mode="date" value="{{date}}" bindchange="bindDateChange" style="display:inline-block;float:right;">
+    <image style='width:40rpx;height:40rpx' mode="widthFix" type="enter" src="./images/calendar.png">
+        <view class="picker" style="display:none">
+            当前选择: {{date}}
+        </view>
+    </image> 
+  </picker>
+</view>
+
+<view wx:if="{}">
+
+</view>
+
+<view class="tc_data">
+
 </view>
 
 <view class='myspecial box_top' catchtap='myspecial'>我的专家 
   <i-icon style='float:right' type="enter"/>
 </view>
-
 <!-- loading -->
 <i-toast id="toast" />
 
-<view style="height:{{scrollheight}}px">
+<view style="height:{{scrollheight}}px"> 
   <scroll-view style="height:{{scrollheight}}px" scroll-y = "true" bindscrolltolower="requestSpecial">
+  
     <view class='specialContainer' wx:for="{{specialList}}" id='{{item.user_id}}' catchtap='specialDetail'>
       <view class='specialLine1'>
         <view class='specialHead'>
           <image mode='widthFix' class='specialHeadImg' src='{{ali + item.headimg}}'></image>
         </view>
         <view class='specialInfo'>
-          <view><text class='specialName c_title'>{{item.name}}</text> <text class='c_sub'>{{item.professional_titles}}</text></view>
+          <view class='specialNameP'><text class='specialName c_title'>{{item.name}}</text> <text class='c_sub specialZhiwei'>{{item.professional_titles}}</text></view>
           <view class='c_sub'>{{item.workunit}}</view>
 
-          <!-- <view data-headimg="{{item.headimg}}" id="{{item.id}}" catchtap="specialGuide" class='specialzixun'>我要咨询</view> -->
+          <view data-headimg="{{item.headimg}}" id="{{item.id}}" catchtap="specialGuide" class='specialzixun'>我要咨询</view>
 
         </view>
       </view>

@@ -17,15 +17,15 @@
   <!-- 协会\俱乐部\团体会 -->
   <view class='banner'>
     <view class='bannerImgp'>
-      <image mode='widthFix' class='bannerImg' src='https://paoba.oss-cn-beijing.aliyuncs.com/1.png'></image>
+      <image mode='widthFix' class='bannerImg' src='../images/1.png'></image>
       <view bindtap='toXiehui' class='modal'>协会</view>
     </view>
     <view class='bannerImgp'>
-      <image mode='widthFix' class='bannerImg' src='https://paoba.oss-cn-beijing.aliyuncs.com/2.png'></image>
+      <image mode='widthFix' class='bannerImg' src='../images/2.png'></image>
       <view bindtap='toClub' class='modal'>俱乐部</view>
     </view>
     <view class='bannerImgp'>
-      <image mode='widthFix' class='bannerImg' src='https://paoba.oss-cn-beijing.aliyuncs.com/3.png'></image>
+      <image mode='widthFix' class='bannerImg' src='../images/3.png'></image>
       <view bindtap='toTuantihui' class='modal'>团体会</view>
     </view>
   </view>
@@ -55,8 +55,7 @@
       </view>
       <view class='itemCenter'>{{ item.competitionName }}</view>
       <view class='itemBottom'>
-        <view class='itemBottomRight c_sub'>距离比赛 : 8天</view>
-        <!-- <view class='itemBottomRight c_sub'>距离比赛 : {{ item.timeDiff }}</view> -->
+        <view class='itemBottomRight c_sub'>距离比赛 : {{ item.timeDiff }} 天</view>
         <view class='c_sub'>比赛时间 : {{ item.startTime }} - {{ item.endTime }}</view>
       </view>
       <view class='itemFooter'>
@@ -90,87 +89,3 @@
   
 
 </scroll-view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <view style='display:none'> -->
-
-  <!-- 搜索 -->
-  <!-- <view>
-    <input placeholder='请输入搜索内容' bindinput='inputSearch'></input>
-    <button bindtap='tapSearch'>搜索</button>
-    <text>我的社团</text>
-  </view> -->
-
-  <!-- 类型 -->
-  <!-- <view>
-    <view>
-      <button bindtap='toXiehui'>协会</button>
-    </view>
-    <view>
-      <button bindtap='toClub'>俱乐部</button>
-    </view>
-    <view>
-      <button bindtap='toTuantihui'>团体会</button>
-    </view>
-  </view> -->
-
-
-  <!-- 本周赛事 下周 -->
-  <!-- <view>
-    <view>
-      <text>本周赛事 {{ now_week_num }} 场</text>
-    </view>
-    <view>
-      <text>下周赛事 {{ next_week_num }} 场</text>
-    </view>
-  </view> -->
-
-
-  <!-- 列表 -->
-  <!-- <view>
-    <view>
-      <view>
-        <button>赛事</button>
-        <button>活动</button>
-      </view>
-      <button catchtap='allMatch'>更多精彩</button>
-    </view>
-
-    <scroll-view scroll-y='true'>
-      <view catchtap='toDetail' wx:for-item="item"  id='{{item.competitionId}}' data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}">
-
-        <view>
-          <image src='{{ item.competitionImg}} ' />
-          <text>{{ item.competitionName }}</text>
-          <view>
-            <text>比赛时间 {{ item.startTime }} - {{ item.endTime }} </text>
-            <text> 距离比赛 {{ item.timeDiff }}</text>
-          </view>
-
-          <view>
-            <text>费用. 免费</text>
-            <text>人报名</text>
-          </view>
-
-        </view>
-      </view>
-    </scroll-view>
-
-  </view> -->
-
-<!-- </view> -->

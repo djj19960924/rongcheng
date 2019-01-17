@@ -1,21 +1,78 @@
 <!-- header -->
-<h_header class='box_top' title='目标设置'></h_header>
+<!-- <h_header class='box_top' title='目标设置'></h_header> -->
+<view class='header'>
+  <image mode='aspectFill' class='header_bg' src='../images/target_bg.png'></image>
+  <view wx:if="{{platform == 'ios'}}" style='top:24pt' class='whitePageTitle'>目标设置</view>
+  <view wx:if="{{platform == 'android'}}" style='top:30pt' class='whitePageTitle'>目标设置</view>
+  <view wx:if="{{platform == 'devtools'}}" style='top:24pt' class='whitePageTitle'>目标设置</view>
+  <view wx:if="{{platform == 'ios'}}" catchtap='back' style='top:24pt' class='back'><i-icon color='#fff' size='24' type="return" /></view>
+  <view wx:if="{{platform == 'android'}}" catchtap='back' style='top:30pt' class='back'><i-icon color='#fff' size='24' type="return" /></view>
+  <view wx:if="{{platform == 'devtools'}}" catchtap='back' style='top:24pt' class='back'><i-icon color='#fff' size='24' type="return" /></view>
+
+
+  <view class='header_bottom'>
+    <view class='bmi_level_container'>
+      <view style='background:#008DD8' class='bmi_level bmi_level1'></view>
+      <view style='background:#85EB00;height:22px' class='bmi_level bmi_level2'></view>
+      <view style='background:#EBAB00' class='bmi_level bmi_level3'></view>
+      <view style='background:#EB4D00' class='bmi_level bmi_level4'></view>
+    </view>
+    <view class='header_bottom2'>
+      <view class='hb_c'>
+        <view class='hb_c_t'>BMI</view>
+        <view class='hb_c_b'>{{bmi}}</view>
+      </view>
+      <view class='hb_c'>
+        <view class='hb_c_t'>身高</view>
+        <view class='hb_c_b'>{{userInfo.height}} cm</view>
+      </view>
+      <view class='hb_c'>
+        <view class='hb_c_t'>体重</view>
+        <view class='hb_c_b'>{{userInfo.weight}} kg</view>
+      </view>
+    </view>
+  </view>
+</view>
 
 <!-- BMI -->
-<view class='b_container'>
+<!-- <view class='b_container'>
   <view class='b_container_1'>BMI</view>
   <view class='b_container_2'>------------------------</view>
   <view class='b_container_3'>{{bmi}} <text style='font-size:22rpx;color:#A1A1A1'>(健康)</text></view>
-</view>
+</view> -->
+
+<!-- title -->
+<view class='bigTitle c_title'>根据您的个人情况，系统已为您推荐：</view>
 
 <!-- 每周运动计划 -->
 <view class='b_container'>
-  <view style='font-size:32rpx' class='b_container_1'>每周运动计划</view>
+  <view style='font-size:32rpx' class='b_container_1 c_content'>每周运动计划</view>
   <view class='b_container_2'>-------------------</view>
-  <view class='b_container_3'>{{stepNumber}} <text style='font-size:22rpx;color:#A1A1A1'>(步)</text></view>
+  <view class='b_container_3'>{{stepNumber}} <text style='font-size:22rpx;color:#A1A1A1'>步</text></view>
 </view>
 
 <!--  -->
+<view class='target'>
+  <view class='targeto c_content'>20周后减重{{reduceJin}}斤</view>
+</view>
+
+<!-- 卡路里 -->
+<view class='kll_title c_content'>每日卡路里目标</view>
+<view class='kll_container'>
+  <view class='kll_container_1'>燃烧的卡路里</view>
+  <view class='kll_container_2'>-------------------</view>
+  <!-- <view class='kll_container_3'>{{dayTotalConsumeCal}} 大卡</view> -->
+  <view class='b_container_3'>{{dayTotalConsumeCal}} <text style='font-size:22rpx;color:#A1A1A1'>大卡</text></view>
+</view>
+<view class='other'>
+  <view>*包括休息时燃烧的约{{dayDefaultCal}}千卡</view>
+  <view>*需要通过燃烧约{{dayWalkCal}}千卡</view>
+</view>
+
+
+
+<view style='padding-bottom:18px;padding-top:18px;' class='bigTitle c_title'>您还可以选择：</view>
+<!-- choose -->
 <view class='plan_container'>
   <view id="{{item.a}}" bindtap='setStepNumber' wx:for="{{btnList}}" class='plan_item'>
     <view class='plan_item_top {{item.isChoose ? "active" : ""}}'>{{item.a}}步</view>
@@ -23,27 +80,11 @@
   </view>
 </view>
 
-<!--  -->
-<view class='target'>
-  <view class='targeto'>20周后减重{{reduceJin}}斤</view>
-</view>
-
-<!-- 卡路里 -->
-<view class='kll_title'>每日卡路里目标</view>
-<view class='kll_container'>
-  <view class='kll_container_1'>燃烧的卡路里</view>
-  <view class='kll_container_2'>-------------------</view>
-  <view class='kll_container_3'>{{dayTotalConsumeCal}} 大卡</view>
-</view>
-<view class='other'>
-  <view>*包括休息时燃烧的约{{dayDefaultCal}}千卡</view>
-  <view>*需要通过燃烧约{{dayWalkCal}}千卡</view>
-</view>
-
 <!-- footer -->
 <view class='footer'>
-  <view bindtap='back' class='footer_i'>取消</view>
-  <view bindtap='setOver' class='footer_i'>确定</view>
+  <!-- <view bindtap='back' class='footer_i'>取消</view>
+  <view bindtap='setOver' class='footer_i'>确定</view> -->
+  <view bindtap='back' class='footer_o'>设置完成</view>
 </view>
 
 

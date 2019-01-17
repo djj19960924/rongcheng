@@ -1,5 +1,6 @@
 var wxCharts = require('../../../utils/wxcharts.js');
 var radarChart = null;
+var utils = require('../../../utils/utils.js')
 var app = getApp();
 Page({
 
@@ -7,61 +8,12 @@ Page({
     food: '多吃蔬菜水果和薯类。推荐我国成年人吃蔬菜300g-500g，水果200g-400g。并注意增加薯类的摄入。每天吃奶类，大豆或其制品。建议每人每天饮奶300ml，摄入30g-50g大豆或相当量的豆制品。常吃适量的鱼、禽、蛋和瘦肉。每日摄入鱼禽肉类50-75g，鱼虾类50-100g，蛋类25-50g。减少烹饪油用量，吃清淡少盐膳食。推荐每日油25-30g，盐不多于6g。食不过量，天天运动，保持健康体重。三餐分配要合理，零食要适当。每天足量饮水，合理选择饮料。如饮酒应限量。吃新鲜卫生的食物。',
     foodo: '多吃蔬菜水果和薯类。推荐我国成年人吃蔬菜300g-500g，水果200g-400g。并注意增加薯类的摄入。每天吃奶类，大豆或其制品。建议每人每天饮奶300ml，摄入30g-50g大豆或相当量的豆制品。常吃适量的鱼、禽、蛋和...',
     showAll: false,
-    list: [{
-        name: '肺活量',
-        grade: 3,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: 'ml',
-        score: '5345',
-        isopen: 1
-      },
-      {
-        name: '握力',
-        grade: 2,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: 'kg',
-        score: '56',
-        isopen: 1
-      },
-      {
-        name: '反应时',
-        grade: 5,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: 's',
-        score: '0.5',
-      },
-      {
-        name: '稳定性',
-        grade: 1,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: 's',
-        score: '54',
-      },
-      {
-        name: '俯卧撑',
-        grade: 3,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: '个',
-        score: '44',
-      },
-      {
-        name: '坐位体前屈',
-        grade: 4,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: 'cm',
-        score: '23',
-      },
-      {
-        name: '纵跳',
-        grade: 2,
-        advice: '啊的空间是否和大卡司和啊大家是否会卡号的夫卡是来了刷卡大家回房间给',
-        danwei: 'cm',
-        score: '56',
-      },
-    ],
   },
 
   onLoad: function(options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this;
     that.setData({
       userInfo: app.globalData.userInfo
@@ -74,10 +26,12 @@ Page({
         key: 'report',
         success: function(res) {
           console.log(res.data.data.data)
-          const report = res.data.data.data;
+          let report = res.data.data.data;
+          report.date = utils.getnyr(report.createTime)
           that.setData({
             report: report
           })
+          
 
           // 肺活量
           let allPro = [
@@ -131,6 +85,7 @@ Page({
               }
             }
           });
+          wx.hideLoading();
         },
       })
     } else {
@@ -141,7 +96,8 @@ Page({
         },
         success: function(res) {
           console.log(res.data.data)
-          const report = res.data.data;
+          let report = res.data.data;
+          report.date = utils.getnyr(report.createTime)
           that.setData({
             report: report
           })
@@ -198,6 +154,7 @@ Page({
               }
             }
           });
+          wx.hideLoading();
         }
       })
     }

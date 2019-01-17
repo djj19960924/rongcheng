@@ -38,6 +38,7 @@
 .seximg{
   width: 15px;
   height:15px;
+  margin-left: 16rpx;
 }
 .top_userInfo_birth{
   background: #fff;
@@ -178,7 +179,7 @@
 }
 .listItem3{
   height: 100rpx;
-  width: 200rpx;
+  width: 100rpx;
 }
 .listItem4{
   height: 100rpx;
@@ -203,8 +204,8 @@
   padding-left: 2px;
 }
 .ok{
-  width: 36rpx;
-  height: 36rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 
 .zqo{

@@ -2,7 +2,7 @@
 <h_header wx:if="{{!loading}}" back="{{false}}" class='box_top' title='智慧荣成'></h_header>
 
 <view wx:if="{{!loading}}" class='container'>
-  <image mode='widthFix' class='logo' src='/images/tice/logo.png'></image>
+  <image mode='widthFix' class='logo' src='/images/logo1.png'></image>
   <text class='line'></text>
   <view>
     <view class='title c_title'>登陆后开发者将获得以下公开权限</view>

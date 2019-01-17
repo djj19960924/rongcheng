@@ -21,6 +21,7 @@ page{
 }
 .rightTop{
   font-size: 32rpx;
+  font-weight: 900
 }
 .rightBottom{
   font-size: 26rpx;
@@ -31,18 +32,26 @@ page{
   background: #fff;
 }
 .contentTop{
-  font-size: 32rpx;
-  color: #0192D6;
+  font-size: 30rpx;
   margin-bottom: 20rpx;
+  font-weight: 900;
 }
 .contentBottom{
-  font-size: 30rpx;
+  font-size: 28rpx;
   width: 100%;
   padding-bottom: 32rpx;
   border-bottom: 1px solid #E1E1E1;
   line-height: 46rpx;
 }
 .pinlv{
-  font-size: 30rpx;
+  font-size: 28rpx;
   line-height: 46rpx;
+}
+.icon{
+  width:16px;
+  height:16px;
+  vertical-align:middle;
+  margin-right:2px;
+  position:relative;
+  top:-2px;
 }

@@ -2,15 +2,15 @@
   font-size: 16px;
   font-weight: 900;
   padding: 0 16px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 .danwei{
   font-size: 24rpx;
   font-weight: 400;
 }
 .chartsContainer{
-  padding: 0 16px;
   width: 100%;
+  height: 30vh;
 }
 .canvas{
   width: 100%;
@@ -31,4 +31,8 @@
   padding: 8px 16px;
   font-size: 28rpx;
   border-bottom: 1px solid #DEDEDE;
+}
+ff-canvas {
+  width: 100%;
+  height: 100%;
 }

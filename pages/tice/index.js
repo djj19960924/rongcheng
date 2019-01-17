@@ -95,7 +95,7 @@ Page({
     console.log(this.data.userInfo)
 
     wx.showLoading({
-      title: '加载中...',
+      title: '加载中',
     })
     wx.login({
       success: function(res) {

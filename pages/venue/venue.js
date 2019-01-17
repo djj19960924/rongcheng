@@ -265,54 +265,54 @@ Page({
     typeList:[
       [
         {
-          icon: '/images/venue/b1.png',
+          icon: 'images/b1.png',
           text: '游泳',
           id: 1,
         },
         {
-          icon: '/images/venue/b2.png',
+          icon: 'images/b2.png',
           text: '篮球',
           id: 2,
         },
         {
-          icon: '/images/venue/b3.png',
+          icon: 'images/b3.png',
           text: '乒乓球',
           id: 3,
         },
         {
-          icon: '/images/venue/b4.png',
+          icon: 'images/b4.png',
           text: '健身',
           id: 4,
         },
         {
-          icon: '/images/venue/b5.png',
+          icon: 'images/b5.png',
           text: '羽毛球',
           id: 5,
         },
       ],
       [
         {
-          icon: '/images/venue/b6.png',
+          icon: 'images/b6.png',
           text: '足球',
           id: 6,
         },
         {
-          icon: '/images/venue/b7.png',
+          icon: 'images/b7.png',
           text: '瑜伽',
           id: 7,
         },
         {
-          icon: '/images/venue/b8.png',
+          icon: 'images/b8.png',
           text: '网球',
           id: 8,
         },
         {
-          icon: '/images/venue/b9.png',
+          icon: 'images/b9.png',
           text: '卡丁车',
           id: 9,
         },
         {
-          icon: '/images/venue/b10.png',
+          icon: 'images/b10.png',
           text: '其他',
           id: 10,
         },

@@ -5,29 +5,63 @@
   <!-- top -->
   <view class='top1'>
     <view class='top1_1'>
-      <image mode='widthFix' class='top1logo' src='/images/tice/logo.png'></image>
-      <text class='c_title'>报告编号 : </text>
-      <text class='c_sub'>190110a482dc93</text>
+      <image mode='widthFix' class='top1logo' src='/images/logo1.png'></image>
+      <!-- <text class='c_title'>报告编号 : </text> -->
+      <!-- <text class='c_sub'>{{report.reportcode}}</text> -->
+      <!-- <text class='c_sub'>190110a482dc93</text> -->
+      <text class="c_wan">
+        <text class="c_rep">体质评估报告</text>
+      <text class="c_zit">Physical fitness assessment report</text>
+      </text>
     </view>
-    <view style='font-size:24rpx;line-height:60rpx' class='c_sub'>2018-12-12</view>
+    <!-- <view style='font-size:24rpx;line-height:60rpx' class='c_sub'>{{report.date}}</view> -->
   </view>
+
+  <view class="top_new">
+    <view class="new">
+      <view class="top_new1">
+          <text class="new_left_left">报告编号:</text>
+          <text class="new_left_right">190110a482dc93</text>
+      </view>
+
+      <view class="top_new2">
+        <text class="new_right_left">体测时间: </text>
+        <text class="new_right_right">{{report.date}}</text>
+      </view>
+    </view>
+
+    <view class="new">
+      <view class="top_new1">
+        <text class="new_left_left">体测点:</text>
+        <text class="new_left_right">天鹅座体测点</text>
+      </view>
+      <view class="top_new2">
+        <text class="new_right_left">数据来源: </text>
+        <text class="new_right_right">荣成市体育局</text>
+      </view> 
+    </view>
+  </view>
+
   <view class='top2'>
+
     <view class='top2_left'>
-      <view class='top2_head'><open-data type="userAvatarUrl"></open-data></view>
+      <view class='top2_head'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
       <view class='top2_info'>
         <view>
           <text class='top2_name c_title'>{{userInfo.nickName}}</text>
-          <image wx:if="{{userInfo.sex == 1}}" class='top2_sex' src='/images/tice/sex1.png'></image>
-          <image wx:else class='top2_sex' src='/images/tice/sex2.png'></image>
+          <image wx:if="{{userInfo.sex == 1}}" class='top2_sex' src='../images/sex1.png'></image>
+          <image wx:else class='top2_sex' src='../images/sex2.png'></image>
         </view>
         <view class='top2_birth'>{{userInfo.birthday}}</view>
       </view>
     </view>
     <view class='top2_right'>
-      <image class='gradeImg' src='/images/tice/reportgrade2.png'></image>
+      <image class='gradeImg' src='../images/reportgrade{{report.level}}.png'></image>
       <view class='gradeText c_title'>
-        <view>等级:优秀</view>
-        <view>成绩:30分</view>
+        <view>等级: {{report.level == 1 ? '优秀' : report.level == 2 ? '良好' : report.level == 3 ? '合格' : '不合格'}}</view>
+        <view>成绩: {{report.score}} 分</view>
       </view>
     </view>
   </view>
@@ -36,7 +70,7 @@
 <view class='container1'>
   <!-- 综合评价 -->
   <view class='title c_title'>综合评价</view>
-  <image mode='widthFix' class='zh_img' src='/images/tice/reportpj.png'></image>
+  <image mode='widthFix' class='zh_img' src='../images/reportpj.png'></image>
   <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
 
   <!-- 体测标准 -->
@@ -59,9 +93,11 @@
     <!--  -->
     <view class='p_center'>
       <view class='p_center_left'>
-        <view class='p_center_left_top c_sub'>单项得分: {{item.grade}}<text>/5分</text></view>
+        <view class='p_center_left_top c_sub'>单项得分: {{item.grade}}
+          <text>/5分</text>
+        </view>
         <view class='p_center_left_bottom'>
-          <i-progress percent="{{ item.grade * 20 }}" status="{{item.grade < 3 ? 'wrong' :item.grade > 3 ? 'success' : ''}}" hide-info stroke-width='8'></i-progress> 
+          <i-progress percent="{{ item.grade * 20 }}" status="{{item.grade < 3 ? 'wrong' :item.grade > 3 ? 'success' : ''}}" hide-info stroke-width='8'></i-progress>
         </view>
       </view>
       <view bindtap='openorclose' data-name='{{item.projectName}}' wx:if="{{item.isopen}}" class='p_center_right'>收起</view>
@@ -74,12 +110,17 @@
   <!-- 饮食建议 -->
   <view class='title c_title'>饮食建议</view>
   <view class='foodp'>
-    <image class='food_left' mode="widthFix" src='/images/tice/girl.png'></image>
+    <image class='food_left' mode="widthFix" src='../images/girl.png'></image>
     <view class='food_right'>
       <text wx:if="{{showAll}}">{{food}}</text>
       <text wx:else>{{foodo}}</text>
       <view bindtap='toshowAll' class='showAll'>{{showAll?'收起':'查看全文'}}</view>
     </view>
+  </view>
+
+
+  <view class="footer">
+    <text class="footer_zt">荣成体育联系方式: 400 828 4848</text>
   </view>
 
 </view>

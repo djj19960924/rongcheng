@@ -1,5 +1,5 @@
 .container{
-  padding: 16px 12px;
+  padding: 5px 12px;
 }
 .container1{
   padding: 0 12px;
@@ -17,6 +17,7 @@
   width: 120rpx;
   vertical-align: middle;
   margin-right: 20rpx;
+  height: 100rpx
 }
 .top2{
   width: 100%;
@@ -167,4 +168,68 @@
   font-size: 24rpx;
   color: #ED3F14;
   
+}
+.c_wan{
+  text-align:center;
+}
+.c_rep{
+  font-size:38rpx;
+  font-weight:bold;
+  margin-top:-20rpx; 
+}
+.c_zit{
+  font-size:20rpx;
+  display: block;
+  position: absolute;
+  left: 160rpx;
+  margin-top:-20rpx; 
+}
+
+.top_new{
+  width: 100%;
+  font-size:25rpx;
+  margin-top:30rpx;
+  margin-left:20rpx;  
+}
+.top_new1{
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.top_new2{
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.new_left_left{
+  float:left;
+  width: 35%;
+  font-weight: bold;
+}
+.new_left_right{
+  float:right;
+  width: 65%;
+  color: RGB(137,137,137);
+}
+.new_right_left{
+  float:left;
+  width: 35%;
+  font-weight: bold;
+}
+.new_right_right{
+  float:right;
+  width: 65%;
+  color: RGB(137,137,137);
+}
+
+.footer{
+  width: 100%;
+  height: 20rpx;
+  background: RGB(229,229,229);
+  text-align: center;
+}
+.footer_zt{
+  color: RGB(152,152,152);
+  font-size:18rpx;
 }

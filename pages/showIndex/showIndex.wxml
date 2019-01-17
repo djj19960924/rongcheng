@@ -1,8 +1,8 @@
 <view class='header'>
-  <image class='headerImg' mode='widthFix' src='../../images/index/header.png'></image>
+  <image class='headerImg' mode='widthFix' src='../../images/1/header.png'></image>
 </view>
 <view class='header_o'>
-  <image class='headerImg_o' mode='widthFix' src='../../images/index/header.png'></image>
+  <image class='headerImg_o' mode='widthFix' src='../../images/1/header.png'></image>
   <view class='headerCover c_sub'><text style='height:20px;margin:auto 0'>啊 ~ 难受 ~ 别再拉我啦 ~</text></view>
 </view>
 
@@ -17,13 +17,13 @@
     circular = "true"
     class='swiper1p'
   >
-    <block wx:for="{{imgUrls}}" wx:key="index">
+    <block wx:for="{{imgUrls}}">
       <swiper-item>
         <image mode='aspectFill' src="{{item}}" class="swiper1"/>
       </swiper-item>
     </block>
   </swiper>
-  <!-- <image mode='widthFix' class='bannerImg' src='../../images/index/banner.png'></image> -->
+  <!-- <image mode='widthFix' class='bannerImg' src='../../images/1/banner.png'></image> -->
   <view class='hu'></view>
 </view>
 
@@ -34,51 +34,51 @@
 
       <view bindtap="toTice" class='indexbtncontainer'>
 
-        <image class='indexbtn' src='../../images/index/b1.png'></image>
+        <image class='indexbtn' src='../../images/1/b1.png'></image>
         <view class='indexbtntext'>体质测试</view>
       </view>
     </i-col>
     <i-col span="6" i-class="col-class">
-      <view bindtap="toEquipment" class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b2.png'></image>
-        <view class='indexbtntext'>体育设施</view>
+      <view bindtap='specialList' class='indexbtncontainer'>
+        <image class='indexbtn' src='../../images/1/b4.png'></image>
+        <view class='indexbtntext'>运动指导</view>
       </view>
     </i-col>
     <i-col span="6" i-class="col-class">
       <view bindtap='sport' class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b3.png'></image>
+        <image class='indexbtn' src='../../images/1/b3.png'></image>
         <view class='indexbtntext'>科学健身</view>
       </view>
     </i-col>
     <i-col span="6" i-class="col-class">
-      <view bindtap='specialList' class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b4.png'></image>
-        <view class='indexbtntext'>专家指导</view>
+      <view bindtap="toEquipment" class='indexbtncontainer'>
+        <image class='indexbtn' src='../../images/1/b2.png'></image>
+        <view class='indexbtntext'>体育设施</view>
       </view>
     </i-col>
   </i-row>
   <i-row>
     <i-col span="6" i-class="col-class">
       <view bindtap='venue' class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b5.png'></image>
+        <image class='indexbtn' src='../../images/1/b5.png'></image>
         <view class='indexbtntext'>场馆资源</view>
       </view>
     </i-col>
     <i-col span="6" i-class="col-class">
       <view bindtap="clickMe" class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b6.png'></image>
+        <image class='indexbtn' src='../../images/1/b6.png'></image>
         <view class='indexbtntext'>赛事社团</view>
       </view>
     </i-col>
     <i-col span="6" i-class="col-class">
       <view bindtap="toNews" class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b7.png'></image>
+        <image class='indexbtn' src='../../images/1/b7.png'></image>
         <view class='indexbtntext'>新闻资讯</view>
       </view>
     </i-col>
     <i-col span="6" i-class="col-class">
       <view bindtap="toAdvice" class='indexbtncontainer'>
-        <image class='indexbtn' src='../../images/index/b8.png'></image>
+        <image class='indexbtn' src='../../images/1/b8.png'></image>
         <view class='indexbtntext'>意见反馈</view>
       </view>
     </i-col>
@@ -87,9 +87,9 @@
 
 <!-- toutiao -->
 <view wx:if="{{arr.length}}" bindtap='toNews' class='toutiao'>
-  <image class='toutiaoLeft' src='../../images/index/tt.png'></image>
+  <image class='toutiaoLeft' src='../../images/1/tt.png'></image>
     <view class='toutiaoText'>
-      <view wx:for='{{arr}}' wx:for-item="item" class='toutiaoText1' wx:key="index">· {{item.title}}</view>
+      <view wx:for='{{arr}}' wx:for-item="item" class='toutiaoText1'>· {{item.title}}</view>
     </view>
   <view class='toutiaoRight'>
     <image style='width:100%' mode='widthFix' src='{{aliImageAddr}}{{newsimage}}'></image>
@@ -107,13 +107,13 @@
     circular = "true"
     class='swiper2p'
   >
-    <block wx:for="{{ads}}" wx:key="index">
+    <block wx:for="{{ads}}">
       <swiper-item>
         <image mode='aspectFill' src="{{item}}" class="swiper2"/>
       </swiper-item>
     </block>
   </swiper>
-  <!-- <image class='advImg' mode='widthFix' src='../../images/index/adv.png'></image> -->
+  <!-- <image class='advImg' mode='widthFix' src='../../images/1/adv.png'></image> -->
 </view>
 
 <!-- new game -->
@@ -132,10 +132,9 @@
         <view class='c_title centerTitle'>
           <text style='background:#0192D6' class='badge'>报名中</text>{{
           item.competitionName }}</view>
-        <view class='c_sub'>赛事地点 : {{location}} </view>
+        <view class='c_sub'>赛事地点 : {{item.location}} </view>
         <view class='c_sub'>赛事时间 : {{ item.startTime }}</view>
-        <!-- <view class='startDays'>距离比赛:{{ item.timeDiff }}天</view> -->
-        <view class='startDays'>距离比赛:8天</view>
+        <view class='startDays'>距离比赛 : {{ item.timeDiff }} 天</view>
       </view>
 
     </view>

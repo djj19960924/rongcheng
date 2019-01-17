@@ -3,29 +3,29 @@
 
 <!--  -->
 <view class='title c_title'>{{ name }}
-  <text class='c_sub danwei'>单位 : {{danWei }}</text>
+  <text wx:if="{{danWei}}" class='c_sub danwei'>单位 : {{ danWei }}</text>
 </view>
 
 <!-- charts -->
-<view class='chartsContainer'>
-  <canvas canvas-id="areaCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+<view class="container chartsContainer">
+  <ff-canvas id="scroll" canvas-id="scrollLine" opts="{{ opts }}"></ff-canvas>
 </view>
 
 <!--  -->
 <view>
   <view class='timeTitle'>
-    <!-- <view>12月5日 - 12月10日</view>  -->
-    <!-- <view>平均 54 kg</view> -->
+    <view>{{groups[groups.length - 1].date}} - {{groups[0].date}}</view> 
+    <view>平均 {{avgScore}} {{danWei }}</view>
   </view>
   <view>
     <view wx:for="{{groups}}" wx:for-item="timeItem">
-    <view wx:for="{{timeItem.list}}" class='c_title dateitem'>
-      <view>
-        <text style="opacity:{{index == 0 ? 1 : 0}}">{{timeItem.date}}</text>
-        <text class='c_sub' style='padding-left:16px'>{{item.date}}</text>
-      </view>
-      <view>{{item.score}} {{ danWei }}</view>
-      </view>
-    </view>
+        <view wx:for="{{timeItem.list}}" class='c_title dateitem'>
+        <view>
+            <text style="opacity:{{index == 0 ? 1 : 0}}">{{timeItem.date}}</text>
+            <text class='c_sub' style='padding-left:16px'>{{item.time}}</text>
+        </view>
+        <view>{{item.score}} {{ danWei }}</view>
+        </view>
+        </view>
   </view>
 </view>

@@ -18,5 +18,5 @@
 </view>
 
 <view class='logop'>
-  <image mode='widthFix' class='logo' src='/images/my/logo.png'></image>
+  <image mode='widthFix' class='logo' src='/images/logo.png'></image>
 </view>

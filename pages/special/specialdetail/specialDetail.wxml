@@ -1,5 +1,5 @@
 <!-- header -->
-<image class='detailHeaderimg' mode='widthFix' src='/images/special/detailHeader.png'></image>
+<image class='detailHeaderimg' mode='widthFix' src='../images/detailHeader.png'></image>
 <view wx:if="{{platform == 'ios'}}" style='top:24pt' class='whitePageTitle'>专家详情</view>
 <view wx:if="{{platform == 'android'}}" style='top:30pt' class='whitePageTitle'>专家详情</view>
 <view wx:if="{{platform == 'devtools'}}" style='top:24pt' class='whitePageTitle'>专家详情</view> 
@@ -32,7 +32,7 @@
 
     <view class='skill'>
       <view class='skillTitle'>
-        <image class='skillIcon' src='/images/special/shanchang.png'></image>
+        <image class='skillIcon' src='../images/shanchang.png'></image>
         <text class='c_title skillText'>擅长</text>
       </view>
       <view class='c_sub skillContent'>{{good_info}}</view>
@@ -40,13 +40,13 @@
 
     <view class='skill'>
       <view class='skillTitle'>
-        <image class='skillIcon' src='/images/special/jianjie.png'></image>
+        <image class='skillIcon' src='../images/jianjie.png'></image>
         <text class='c_title skillText'>简介</text>
       </view>
       <view class='c_sub skillContent'>{{introduction}}</view>
     </view>
 
-    <!-- <view class='wantzixun' id="{{id}}" bindtap="specialGuide">我要咨询</view> -->
+    <view class='wantzixun' id="{{id}}" bindtap="specialGuide">我要咨询</view>
 
   </view>
 </view>

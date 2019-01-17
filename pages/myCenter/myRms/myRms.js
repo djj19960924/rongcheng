@@ -107,7 +107,7 @@ Page({
 function getRepairListByUserId(id, pageNo) {
   var that = this;
   wx.showLoading({
-    title: '加载中...',
+    title: '加载中',
   })
   //获取用户信息
   wx.request({

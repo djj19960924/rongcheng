@@ -46,7 +46,8 @@
 /* run */
 .runContainer{
   width: 100%;
-  margin-top: 50rpx;
+  height: 30vh;
+  margin-top: 20rpx;
 }
 .canvas {
     width: 92%;
@@ -144,4 +145,96 @@
 .foodImg{
   width: 100%;
   border-radius: 3px;
+}
+
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* 运动小结 */
+.xiaojie_container{
+  width: 100%;
+  padding: 16px 16px 0 16px;
+}
+.xiaojie_item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 38px;
+  line-height: 38px;
+}
+.xiaojie_icon{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+}
+.xiaojie_title{
+  font-size: 32rpx;
+}
+.xiaojie_line{
+  color: #E3E3E3;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+.xiaojie_value{
+  font-size:48rpx;
+  color:#0192D6;
+  font-weight:900;
+}
+.xiaojie_danwei{
+  font-size: 24rpx;
+  font-weight:400;
+}
+/* banner */
+.guide_bg{
+  width: 100%;
+}
+
+/* 体测数据 */
+.tice_container{
+  width: 100%;
+  position: relative;
+}
+.tice_item{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.tice_left{
+  display: flex;
+}
+.tice_icon{
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+}
+.tice_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.tice_content_top{
+  font-size: 32rpx;
+}
+.tice_content_bottom{
+  font-size: 26rpx;
+}
+.tice_go{
+  line-height: 48px;
+  padding-right: 10px;
+}
+.tice_detail{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  font-size: 24rpx;
+  font-weight: 400
 }

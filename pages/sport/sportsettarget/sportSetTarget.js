@@ -17,6 +17,15 @@ function queryOrNewsSportTarget(open_id,that) {
       var sportTarget = res.data.data.sportTarget;
 
       var reduceJin = res.data.data.reduceJin;
+
+      var btnList = sportSetTarget.that.data.btnList;
+      btnList.forEach(ele => {
+        if(ele.a == sportTarget.stepNumber){
+          ele.isChoose = true
+        }else{
+          ele.isChoose = false;
+        }
+      })
     
 
       sportSetTarget.that.setData({
@@ -25,14 +34,19 @@ function queryOrNewsSportTarget(open_id,that) {
         stepNumber: sportTarget.stepNumber,
         dayDefaultCal: sportTarget.dayDefaultCal,
         dayWalkCal: sportTarget.dayWalkCal,
-        reduceJin: reduceJin
+        reduceJin: reduceJin,
+        btnList:btnList
       })
+      wx.hideLoading()
 
     }
   })
 }
 //设置步数
 function setStepNumber(stepNumber , open_id){
+  wx.showLoading({
+    title: '计算中',
+  })
   wx.request({
     url: app.globalData.special_url+'/sport/setSportTargetStepNumber',
     data:{
@@ -53,6 +67,12 @@ function setStepNumber(stepNumber , open_id){
         stepNumber: stepNumber,
         reduceJin: reduceJin
       })
+      wx.hideLoading();
+      wx.showToast({
+        title:'设置成功',
+        icon:'none'
+      })
+
 
     }
   })
@@ -89,6 +109,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    platform: app.globalData.platform,
+    userInfo:app.globalData.userInfo,
     btnList: [
       {
         a: '2000',
@@ -98,7 +120,7 @@ Page({
       {
         a: '5000',
         b: '标准',
-        isChoose: true
+        isChoose: false
       },
       {
         a: '8000',
@@ -117,6 +139,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     sportSetTarget.that = this;
     var open_id = app.globalData.userInfo.weChatOpenid;
 

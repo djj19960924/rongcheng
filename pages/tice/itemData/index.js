@@ -1,47 +1,11 @@
-var wxCharts = require('../../../utils/wxcharts.js');
 var util = require('../../../utils/utils.js')
-var app = getApp();
-var areaChart = null;
+var app = getApp(); 
+
+let chart = null;
+
 Page({
 
   data: {
-    data: [{
-        date: '12月05日',
-        time: [{
-            key: '10:12',
-            value: '56'
-          },
-          {
-            key: '10:12',
-            value: '56'
-          },
-          {
-            key: '10:12',
-            value: '56'
-          },
-        ]
-      },
-      {
-        date: '12月06日',
-        time: [{
-            key: '10:12',
-            value: '56'
-          },
-          {
-            key: '10:12',
-            value: '56'
-          },
-          {
-            key: '10:12',
-            value: '56'
-          },
-          {
-            key: '10:12',
-            value: '56'
-          },
-        ]
-      },
-    ],
     nameMap: {
       1: '肺活量',
       2: '握力',
@@ -55,6 +19,8 @@ Page({
       10: '纵跳高度',
       11: '坐位体前屈',
     },
+    opts: null,
+    arr:[]
   },
 
   groupBy: function(array, f) {
@@ -69,119 +35,131 @@ Page({
     });
   },
 
-  onLoad: function(options) {
-    // console.log(app.globalData.userInfo.weChatOpenid);
-
+  onLoad: function (options) {
     let that = this
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
     var projectNo = options.projectNo;
     //单位
-    var danwei = options.danwei;
+    var danwei = options.projectNo != 6 ? options.danwei : '';
 
     this.setData({
       name: this.data.nameMap[projectNo],
       danWei: danwei,
+      opts: {
+        onInit: initChart
+      },
     })
 
-    wx.request({
-      url: app.globalData.tc_url + '/v2_user/tc_list',
-      method: 'POST',
-      data: {
-        userId: app.globalData.userInfo.weChatOpenid,
-        tcType: projectNo
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function(res) {
-        console.log(res);
-        var arr = res.data.data.list;
+    function initChart(canvas, width, height, F2) {
+      new Promise((resolve, reject) => {
+        wx.request({
+          url: app.globalData.tc_url + '/v2_user/tc_list',
+          method: 'POST',
+          data: {
+            userId: app.globalData.userInfo.weChatOpenid,
+            tcType: projectNo
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: function (res) {
+            console.log(res);
+            var arr = res.data.data.list;
 
-        let data_list = []
-        let time_list = []
-        arr.forEach(item => {
-          item.date = util.getnyr(item.createTime)
-          data_list.push(Number(item.score)) 
-          time_list.push(item.date)
+            let data_list = []
+            let time_list = []
+            let totalScore = 0
+            arr.forEach(item => {
+              item.date = util.getnyr(item.createTime)
+              item.time = util.getsfm(item.createTime,"HH-MM")
+              data_list.push(Number(item.score))
+              time_list.push(item.date)
+              totalScore += Number(item.score)
+            })
+
+            that.setData({
+              avgScore: arr.length ? (totalScore / arr.length).toFixed(1) : 0,
+            })
+
+            let sorted = that.groupBy(arr, function (item) {
+              return [item.date];
+            });
+
+            console.log(sorted)
+            let groups = []
+
+            sorted.forEach(item => {
+              let temp = {}
+              temp.date = item[0].date
+              temp.list = item
+              groups.push(temp)
+
+            })
+            console.log(groups)
+
+            that.setData({
+              groups: groups
+            })
+            resolve(sorted)
+          }
         })
-        that.setData({
-           arr: arr,
+      }).then((res) => {
+        let data = [] 
+        res.forEach(ele => {
+          data.push(ele[0])
         })
-      
-        let sorted = that.groupBy(arr, function(item) {
-          return [item.date];
+        chart = new F2.Chart({
+          el: canvas,
+          width,
+          height,
+          animate: true
+        });
+        let originDates = []
+        data.forEach(ele => {
+          originDates.push(ele.date)
+        })
+        chart.source(data.slice(0,7).reverse(), {
+          date: {
+            // tickCount: data.length < 5 ? data.length : 4,
+            type: 'timeCat',
+            values: originDates,
+            mask: 'MM-DD'
+          }
+        });
+        chart.tooltip({
+          showCrosshairs: true,
+          showItemMarker: false,
+          background: {
+            radius: 2,
+            fill: '#1890FF',
+            padding: [3, 5]
+          },
+          nameStyle: {
+            fill: '#fff'
+          },
+          onShow(ev) {
+            const items = ev.items;
+            items[0].name = items[0].title;
+          }
         });
 
-        console.log(sorted)
-        let groups = []
+        chart.line().position('date*score');
+        chart.point()
+          .position('date*score')
+          .style({
+            lineWidth: 1,
+            stroke: '#fff'
+          });
 
-        sorted.forEach(item => {
-          let temp = {} 
-          temp.date = item[0].date
-          temp.list = item
-          groups.push(temp)
-        
-        })
-
-        that.setData({
-          groups: groups
-        })
-
-        // console.log(groups)
-        console.log(data_list)
-        areaChart = new wxCharts({
-          canvasId: 'areaCanvas',
-          type: 'area',
-          // categories: ['12-11', '12-11', '12-11', '12-11', '12-11', '12-11', '12-12'],
-          categories: time_list,
-          animation: true,
-          series: [{
-            name: '日期',
-            // data: [56, 54, 58, 45, 55, 51, 12],
-            data: data_list,
-            format: function (val) {
-              return val;
-            }
-          }],
-          yAxis: {
-            // title: '',
-            format: function (val) {
-              return val;
-            },
-            min: 0,
-            fontColor: '#9F9F9F',
-            gridColor: '#9F9F9F',
-            titleFontColor: '#9F9F9F'
-          },
-          xAxis: {
-            fontColor: '#9F9F9F',
-            gridColor: '#9F9F9F'
-          },
-          extra: {
-            legendTextColor: '#9F9F9F'
-          },
-          width: windowWidth,
-          height: 200
-        });
-
-      }
-    })
-
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
+        chart.interaction('pan');
+        chart.render();
+        wx.hideLoading();
+        return chart;
+      })
     }
   },
-
-  onShareAppMessage: function() {
-
-  },
-
-  touchHandler: function(e) {
-    console.log(areaChart.getCurrentDataIndex(e));
-    areaChart.showToolTip(e);
-  },
-
 })

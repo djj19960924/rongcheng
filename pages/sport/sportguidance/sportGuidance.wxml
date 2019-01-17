@@ -1,5 +1,5 @@
 <!-- header -->
-<image style='z-index:-100' class='bg' mode='widthFix' src='/images/sport/sport_bg1.png'></image>
+<image style='z-index:-100' class='bg' mode='widthFix' src='../images/sport_bg1.png'></image>
 <view wx:if="{{platform == 'ios'}}" style='top:24pt' class='whitePageTitle'>运动目标</view>
 <view wx:if="{{platform == 'android'}}" style='top:30pt' class='whitePageTitle'>运动目标</view>
 <view wx:if="{{platform == 'devtools'}}" style='top:24pt' class='whitePageTitle'>运动目标</view>
@@ -7,12 +7,9 @@
 <view wx:if="{{platform == 'android'}}" style='width:100%;height:62pt'></view>
 <view wx:if="{{platform == 'devtools'}}" style='width:100%;height:56pt'></view>
 
-<!-- loading -->
-<i-toast id="toast" />
-
 <!-- tab -->
 <view class='tabContainer'>
-  <view class='rili'>本周 <i-icon color='#C6CCCE' size='14' type="unfold" /></view>
+  <!-- <view bindtap='chooseWeek' class='rili'>本周 <i-icon color='#C6CCCE' size='14' type="unfold" /></view> -->
   <view class='tab'>
       <text bindtap='queryStep' class='tabLeft'>每日运动</text>
       <text class='tabRight'>健康指导</text>
@@ -20,13 +17,13 @@
 </view>
 
 <!-- run -->
-<view class='runContainer'>
-    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchmove="moveHandler" bindtouchstart="touchHandler" bindtouchend="touchEndHandler"></canvas>
+<view class='runContainer container'>
+  <ff-canvas id="area" canvas-id="area" opts="{{ opts }}"></ff-canvas>
 </view>
 
 <view class='content'>
   <!-- 运动小结 -->
-  <view style='width:100%;padding:12rpx 32rpx 0 32rpx;'>
+  <!-- <view style='width:100%;padding:12rpx 32rpx 0 32rpx;'>
     <view class='title c_title'>
       运动小结
     </view>
@@ -53,6 +50,46 @@
         <view><text class='adviceValue'>{{totalConsumeCal}} </text><text class='adviceNum c_sub'>大卡</text></view>
       </view>
     </view>
+  </view> -->
+  <view class='xiaojie_container'>
+    <view class='xiaojie_item'>
+      <view class='xiaojie_title c_title'><image src='../images/icon_step.png' class='xiaojie_icon'></image>本周总步数</view>
+      <view class='xiaojie_line'>------------</view>
+      <view class='xiaojie_value'>{{thisWeekTotalStepNumber}} <text class='xiaojie_danwei c_sub'>步</text></view>
+    </view>
+    <view class='xiaojie_item' style='margin:10px 0;'>
+      <view class='xiaojie_title c_title'><image src='../images/icon_km.png' class='xiaojie_icon'></image>总里程</view>
+      <view class='xiaojie_line'>---------------</view>
+      <view class='xiaojie_value'>{{totalKm}} <text class='xiaojie_danwei c_sub'>公里</text></view>
+    </view>
+  </view>
+
+  <image class='guide_bg' src='../images/guide_bg.png' mode='widthFix'></image>
+  
+  <!-- 体测数据 -->
+  <view style='width:100%;padding: 0 32rpx;'>
+    <view class='title c_title'>
+      体测数据
+      <view bindtap='goTiceIndex' class='tice_detail c_sub'>查看详情</view>
+    </view>
+    <view class='tice_container'>
+      <i-row>
+        <i-col wx:for="{{ticeArr}}" wx:if="{{ item.score && item.name != '身高体重' }}" span="12" i-class="col-class">
+          <view bindtap='goTiceDetail' data-danwei='{{item.danWei}}' data-projectNo='{{item.tcType}}' class='tice_item'>
+            <view class='tice_left'>
+              <image class='tice_icon' src='/images/global/tc_{{item.iconName}}.png'></image>
+              <view class='tice_content'>
+                <view class='c_title tice_content_top'>{{item.name}}</view>
+                <view class='c_sub tice_content_bottom'>{{item.score}} {{item.danWei}}</view>
+              </view>
+            </view>
+            <view class='tice_go'>
+              <i-icon color='#80848F' type="enter" />
+            </view>
+          </view>
+        </i-col>
+      </i-row>
+    </view>
   </view>
 
   <view style='margin-top:10px' class='cutline'></view>
@@ -62,11 +99,11 @@
     <view class='title c_title'>
       运动项目推荐
     </view>
-    <!-- 以下循环 -->
+    <!--  -->
     <block wx:for='{{sportRecommend}}' >
 
     <view bindtap='sportRecommendDetail' data-sportRecommend='{{item}}' class='sportItem'>
-      <image class='sportImg' src='/images/sport/{{item.iconName}}.png'></image>
+      <image class='sportImg' src='../images/{{item.iconName}}.png'></image>
       <view class='sportInfo'>
         <view class='sportInfoLine1 c_title'>{{item.activeType}}
           <text class='c_sub' style='font-size:28rpx'>{{item.exerciseName}}</text>
@@ -81,88 +118,5 @@
     </view>
 
     </block> 
-
-    <!-- <view bindtap='sportRecommendDetail' data-sportRecommend='{{item}}' class='sportItem'>
-      <image class='sportImg' src='/images/icon.png'></image>
-      <view class='sportInfo'>
-        <view class='sportInfoLine1 c_title'>柔韧练习
-          <text class='c_sub' style='font-size:28rpx'>首推额头，侧键，地方</text>
-        </view>
-        <view class='sportInfoLine2 c_sub'>每周
-          <text style='color:#F80707'>3 - 7</text>
-          次；
-          <text>每次3 - 5组；</text>
-        </view>
-        <view style='font-size:24rpx' class='c_sub'>注意：爱上了点卡根据看来是的感觉快来的风格当时法国的风格当时法国的风格</view>
-      </view>
-    </view>
-    <view class='sportItem'>
-      <image class='sportImg' src='/images/icon.png'></image>
-      <view class='sportInfo'>
-        <view class='sportInfoLine1 c_title'>柔韧练习
-          <text class='c_sub' style='font-size:28rpx'>首推额头，侧键，地方</text>
-        </view>
-        <view class='sportInfoLine2 c_sub'>每周
-          <text style='color:#F80707'>3 - 7</text>
-          次；
-          <text>每次3 - 5组；</text>
-        </view>
-        <view style='font-size:24rpx' class='c_sub'>注意：爱上了点卡根据看来是的感觉快来的风格当时法国的风格当时法国的风格</view>
-      </view>
-    </view>
-    <view class='sportItem'>
-      <image class='sportImg' src='/images/icon.png'></image>
-      <view class='sportInfo'>
-        <view class='sportInfoLine1 c_title'>柔韧练习
-          <text class='c_sub' style='font-size:28rpx'>首推额头，侧键，地方</text>
-        </view>
-        <view class='sportInfoLine2 c_sub'>每周
-          <text style='color:#F80707'>3 - 7</text>
-          次；
-          <text>每次3 - 5组；</text>
-        </view>
-        <view style='font-size:24rpx' class='c_sub'>注意：爱上了点卡根据看来是的感觉快来的风格当时法国的风格当时法国的风格</view>
-      </view>
-    </view> -->
   </view>
 </view>
-
-
-<!-- <view>
-  <button bindtap='queryStep'>每日运动</button>
-</view>
-
-<view>
-{{firstSixDay}}
-{{firstFiveDay}}
-{{firstFourDay}}
-{{firstThreeDay}}
-{{firstTwoDay}}
-{{firstOneDay}}
-{{today}}
-</view> -->
-
-
-
-<!-- <view>
-运动项目推荐
-</view>
-
-<view wx:for='{{sportRecommend}}'>
-
-<view bindtap='sportRecommendDetail' data-sportRecommend='{{item}}'>
-  <view>
-    {{item.activeType}}
-  </view>
-  <view>
-    {{item.exerciseName}}
-  </view>
-  <view>
-    每周{{item.frequencyL}}-{{item.frequencyH}}次;  {{item.suggestTimes}}
-  </view>
-
-  <view>
-    注意:{{item.notice}}
-  </view>
-</view>
-</view> -->

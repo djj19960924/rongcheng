@@ -12,8 +12,7 @@
       </view>
       <view class='itemCenter'>{{ item.competitionName }}</view>
       <view class='itemBottom'>
-        <view class='itemBottomRight c_sub'>距离比赛 : 8天</view>
-        <!-- <view class='itemBottomRight c_sub'>距离比赛 : {{ item.timeDiff }}</view> -->
+        <view class='itemBottomRight c_sub'>距离比赛 : {{ item.timeDiff }} 天</view>
         <view class='c_sub'>比赛时间 : {{ item.startTime }} - {{ item.endTime }}</view>
       </view>
       <view class='itemFooter'>
@@ -28,40 +27,3 @@
       <i-spin wx:if="{{loading}}"></i-spin>
     </view> 
 </scroll-view>
-
-
-
-
-
-
-
-<!-- 列表 -->
-  <!-- <view>
-    <view>
-      <view>
-       <button>报名赛事</button>
-      <button>赛事日历</button>
-      </view>
-     </view>
-
-    <scroll-view scroll-y='true'>
-      <view catchtap='toDetail'  id='{{ item.competitionId }}' wx:for-item="item" data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}">
-
-        <view>
-          <image src='{{ item.competitionImg}} ' />
-          <text>{{ item.competitionName }}</text>
-          <view>
-            <text>比赛时间 {{ item.startTime }} - {{ item.endTime }} </text>
-            <text> 距离比赛 {{ item.timeDiff }}</text>
-          </view>
-
-          <view>
-            <text>费用. 免费</text>
-            <text>人报名</text>
-          </view>
-
-        </view>
-      </view>
-    </scroll-view>
-
-  </view> -->

@@ -22,26 +22,3 @@
       <i-spin wx:if="{{loading}}"></i-spin>
     </view>
 </scroll-view>
-
-
-  
-   <!-- <scroll-view scroll-y='true'>
-      <view catchtap='toDetail' wx:for-item="item"  id='{{item.competitionId}}' data-id="{{  item.competitionId }}" wx:for="{{ competition_list }}" wx:key="{{ competitionId }}">
-
-        <view>
-          <image src='{{ item.competitionImg }} ' />
-          <text>{{ item.competitionName }}</text>
-          <view>
-            <text>比赛时间 {{ item.startTime }} - {{ item.endTime }} </text>
-            <text> 距离比赛 {{ item.timeDiff }}</text>
-          </view>
-
-          <view>
-            <text>费用. 免费</text>
-            <text>人报名</text>
-          </view>
-
-        </view>
-      </view>
-    </scroll-view> -->
-

@@ -105,7 +105,7 @@ Page({
 function getRepairListDetailById() {
   var that = this;
   wx.showLoading({
-    title: '加载中...',
+    title: '加载中',
   })
   wx.request({
     url: app.globalData.url + "wx/repairDetail",

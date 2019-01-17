@@ -1,4 +1,8 @@
 <!-- header -->
 <h_header class='box_top' title='消息通知'></h_header>
 
-<h_nodata imgW='160' imgH='160' img='http://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG237.png' tips = '建设中...'></h_nodata>
+<!-- <h_nodata imgW='160' imgH='160' img='http://paoba.oss-cn-beijing.aliyuncs.com/WechatIMG237.png' tips = '建设中...'></h_nodata> -->
+
+<scroll-view scroll-x="true" bindscroll="bindscroll">
+  <canvas canvas-id="canvas" id="canvas"></canvas>
+</scroll-view>

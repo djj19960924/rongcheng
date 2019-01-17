@@ -71,7 +71,7 @@ Page({
   
   onLoad: function (options) {
     wx.showLoading({
-      title: '加载中...',
+      title: '加载中',
     })
     news.that= this;
     size = 10;

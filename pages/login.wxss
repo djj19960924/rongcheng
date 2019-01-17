@@ -47,21 +47,21 @@
   100% {transform: rotate(360deg);}
 }
 .loadingContainer{
-  width: 200rpx;
-  height: 200rpx;
+  width: 100rpx;
+  height: 100rpx;
   position: relative;
   /* animation: rotate 3s linear infinite; */
-  background: #ddd;
+  /* background: #ddd; */
 }
 .ball1{
-  width: 118rpx;
-  height: 118rpx;
+  width: 59rpx;
+  height: 59rpx;
   border-radius: 50%;
   background: #04BE01;
 }
 .ball2{
-  width: 118rpx;
-  height: 118rpx;
+  width: 59rpx;
+  height: 59rpx;
   border-radius: 50%;
   background:#14359a;
   position: absolute;
